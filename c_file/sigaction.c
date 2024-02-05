@@ -1,38 +1,76 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <signal.h>
-#include <unistd.h>
-
-// ÐÅºÅ´¦Àíº¯Êý
-void handle_sigint(int sig) {
-    printf("Caught signal %d (SIGINT)\n", sig);
-}
-
-int main() {
-    // ´´½¨ÐÅºÅ´¦Àí½á¹¹Ìå
-    struct sigaction sa;
-    
-    // ³õÊ¼»¯ÐÅºÅ´¦Àí½á¹¹Ìå
-    memset(&sa, 0, sizeof(sa));
-    
-    // ÉèÖÃÐÅºÅ´¦Àíº¯Êý
-    sa.sa_handler = handle_sigint;
-    
-    // ÉèÖÃ SA_RESTART ±êÖ¾£¬ÒÔ±ã±»ÐÅºÅÖÐ¶ÏµÄÏµÍ³µ÷ÓÃ¿ÉÒÔÖØÆô
-    sa.sa_flags = SA_RESTART;
-    
-    // ×¢²áÐÅºÅ´¦Àíº¯Êý
-    if (sigaction(SIGINT, &sa, NULL) == -1) {
-        perror("sigaction() failed");
-        return EXIT_FAILURE;
-    }
-
-    printf("Press Ctrl+C to catch a signal.\n");
-
-    // ³ÌÐò½«ÎÞÏÞÆÚµØÔËÐÐ£¬Ö±µ½½ÓÊÕµ½ SIGINT ÐÅºÅ
-    while (1) {
-        pause(); // ÔÝÍ£Ö´ÐÐ£¬µÈ´ýÐÅºÅ
-    }
-
-    return EXIT_SUCCESS;
-}
+#include <stdio.h>
+
+#include <stdlib.h>
+
+#include <signal.h>
+
+#include <unistd.h>
+
+#include <string.h>
+
+// ï¿½ÅºÅ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+void handle_sigint(int sig) {
+
+    printf("Caught signal %d (SIGINT)\n", sig);
+
+}
+
+
+
+int main() {
+
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ÅºÅ´ï¿½ï¿½ï¿½ï¿½á¹¹ï¿½ï¿½
+
+    struct sigaction sa;
+
+    
+
+    // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ÅºÅ´ï¿½ï¿½ï¿½ï¿½á¹¹ï¿½ï¿½
+
+    memset(&sa, 0, sizeof(sa));
+
+    
+
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ÅºÅ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+    sa.sa_handler = handle_sigint;
+
+    
+
+    // ï¿½ï¿½ï¿½ï¿½ SA_RESTART ï¿½ï¿½Ö¾ï¿½ï¿½ï¿½Ô±ã±»ï¿½Åºï¿½ï¿½Ð¶Ïµï¿½ÏµÍ³ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+    sa.sa_flags = SA_RESTART;
+
+    
+
+    // ×¢ï¿½ï¿½ï¿½ÅºÅ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+    if (sigaction(SIGINT, &sa, NULL) == -1) {
+
+        perror("sigaction() failed");
+
+        return EXIT_FAILURE;
+
+    }
+
+
+
+    printf("Press Ctrl+C to catch a signal.\n");
+
+
+
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½Ð£ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½Õµï¿½ SIGINT ï¿½Åºï¿½
+
+    while (1) {
+
+        pause(); // ï¿½ï¿½Í£Ö´ï¿½Ð£ï¿½ï¿½È´ï¿½ï¿½Åºï¿½
+
+    }
+
+
+
+    return EXIT_SUCCESS;
+
+}
+

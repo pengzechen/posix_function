@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <pthread.h>
 #include <errno.h>
+#include <unistd.h>
 
 void *func1()/*1秒钟之后退出*/
 {

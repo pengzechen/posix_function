@@ -10,6 +10,8 @@
 
 #include <errno.h>
 
+#include <string.h>
+
 int main() {
 
     const char *filename = "example.txt";
@@ -17,10 +19,6 @@ int main() {
     int fd;
 
     struct flock lock;
-
-
-
-    // ���ļ�
 
     fd = open(filename, O_WRONLY | O_CREAT, 0644);
 
@@ -33,9 +31,6 @@ int main() {
     }
 
 
-
-    // ��ʼ�����ṹ
-
     memset(&lock, 0, sizeof(lock));
 
     lock.l_type = F_WRLCK; // д��
@@ -44,11 +39,8 @@ int main() {
 
     lock.l_start = 0;
 
-    lock.l_len = 0; // ���������ļ�
+    lock.l_len = 0; 
 
-
-
-    // ��ȡ�ļ��������ĵ�ǰ״̬
 
     if (fcntl(fd, F_GETLK, &lock) == -1) {
 
@@ -59,10 +51,6 @@ int main() {
         return EXIT_FAILURE;
 
     }
-
-
-
-    // ����ļ��Ѿ�����������ȴ����ͷ�
 
     if (lock.l_type != F_UNLCK) {
 
@@ -85,30 +73,12 @@ int main() {
     }
 
 
-
-    // �����ļ�������
-
-    flockfile(fd);
-
-
-
-    // ��ʱ�ļ��ѱ����������԰�ȫ�ؽ���д����
+    flockfile(fdopen(fd, "w+"));
 
     printf("File is locked. Writing to file...\n");
 
-    // д�����ݵ��ļ�
+    funlockfile(fdopen(fd, "w+"));
 
-    // ...
-
-
-
-    // �����ļ�������
-
-    funlockfile(fd);
-
-
-
-    // �ر��ļ�������
 
     if (close(fd) == -1) {
 
@@ -117,10 +87,6 @@ int main() {
         return EXIT_FAILURE;
 
     }
-
-
-
-    // ���������˳�
 
     return EXIT_SUCCESS;
 

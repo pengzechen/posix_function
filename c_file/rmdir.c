@@ -8,19 +8,18 @@
 
 #include <errno.h>
 
+#include <unistd.h>
+
 #define PATH_MAX 300
 
 int main() {
 
-    // ����Ҫɾ����Ŀ¼��·��
 
     const char *directory_name = "demo_directory";
 
     char directory_path[PATH_MAX];
 
 
-
-    // ��ȡ��ǰ����Ŀ¼
 
     char current_directory[PATH_MAX];
 
@@ -33,14 +32,8 @@ int main() {
     }
 
 
-
-    // ����Ŀ¼������·��
-
     snprintf(directory_path, PATH_MAX, "%s/%s", current_directory, directory_name);
 
-
-
-    // ����Ŀ¼������������ڣ�
 
     int result = mkdir(directory_path, 0755);
 
@@ -61,14 +54,7 @@ int main() {
     }
 
 
-
-    // �ȴ�һ��ʱ�䣬�Ա�Ŀ¼���Ա�����ϵͳ����
-
     sleep(1);
-
-
-
-    // ɾ��Ŀ¼
 
     result = rmdir(directory_path);
 

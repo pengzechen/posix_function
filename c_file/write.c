@@ -1,7 +1,13 @@
 #include <stdio.h>
+
 #include <unistd.h>
+
 #include <stdlib.h>
+
+// #include <unistd.h>
 #include <string.h>
+// #include <sys/types.h>   
+// #include <sys/stat.h>   
 #include <fcntl.h>
 
 int main() {
@@ -12,7 +18,7 @@ int main() {
 
 
 
-    // ���ļ�������ļ��������򴴽��ￄ1�7
+    // ���ļ�������ļ��������򴴽���
 
     int fd = open("example.txt", O_WRONLY | O_CREAT | O_EXCL, 0644);
 

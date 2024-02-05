@@ -1,45 +1,77 @@
-#include <stdio.h>
-#include <pthread.h>
-#include <unistd.h>
-
-// 线程函数，打印数字
-void *print_numbers(void *arg) {
-    int num = (int)arg;
-    for (int i = 0; i < 5; i++) {
-        printf("Number: %d\n", num);
-        sleep(1); // 休眠1秒
-    }
-    return NULL;
-}
-
-// 线程函数，打印字母
-void *print_letters(void *arg) {
-    for (int i = 0; i < 5; i++) {
-        printf("Letter: %c\n", 'A' + i);
-        sleep(1); // 休眠1秒
-    }
-    return NULL;
-}
-
-int main() {
-    pthread_t thread1, thread2;
-
-    // 创建打印数字的线程
-    if (pthread_create(&thread1, NULL, print_numbers, (void *)1) != 0) {
-        perror("pthread_create failed for numbers");
-        return 1;
-    }
-
-    // 创建打印字母的线程
-    if (pthread_create(&thread2, NULL, print_letters, (void *)0) != 0) {
-        perror("pthread_create failed for letters");
-        return 1;
-    }
-
-    // 等待线程结束
-    pthread_join(thread1, NULL);
-    pthread_join(thread2, NULL);
-
-    printf("Main thread completed successfully.\n");
-    return 0;
-}
+#include <stdio.h>
+
+#include <pthread.h>
+
+#include <unistd.h>
+
+#include <stdlib.h>
+
+
+void *print_numbers(void *arg) {
+
+    int *num = (int*)arg;
+
+    for (int i = 0; i < 5; i++) {
+
+        printf("Number: %d\n", *num);
+
+        sleep(1); // 锟斤拷锟斤拷1锟斤拷
+
+    }
+
+    return NULL;
+
+}
+
+
+void *print_letters(void *arg) {
+
+    for (int i = 0; i < 5; i++) {
+
+        printf("Letter: %c\n", 'A' + i);
+
+        sleep(1); // 锟斤拷锟斤拷1锟斤拷
+
+    }
+
+    return NULL;
+
+}
+
+
+
+int main() {
+
+    pthread_t thread1, thread2;
+
+
+    if (pthread_create(&thread1, NULL, print_numbers, (void *)1) != 0) {
+
+        perror("pthread_create failed for numbers");
+
+        return 1;
+
+    }
+
+
+    if (pthread_create(&thread2, NULL, print_letters, (void *)0) != 0) {
+
+        perror("pthread_create failed for letters");
+
+        return 1;
+
+    }
+
+
+    pthread_join(thread1, NULL);
+
+    pthread_join(thread2, NULL);
+
+
+
+    printf("Main thread completed successfully.\n");
+
+    return 0;
+
+}
+

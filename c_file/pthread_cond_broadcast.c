@@ -1,90 +1,180 @@
-#include <stdio.h>
-#include <pthread.h>
-#include <unistd.h>
-
-#define NUM_PRODUCTS 10
-
-// ¹²Ïí×ÊÔ´£ºÉÌÆ·Êý×é
-int products[NUM_PRODUCTS];
-int num_products = 0;
-
-// Ìõ¼þ±äÁ¿
-pthread_cond_t cond;
-pthread_mutex_t mutex;
-
-// Éú²úÕßÏß³Ìº¯Êý
-void *producer(void *arg) {
-    int i;
-    for (i = 0; i < NUM_PRODUCTS; i++) {
-        // Éú²úÉÌÆ·
-        products[i] = i;
-        num_products++;
-
-        // Í¨ÖªÏû·ÑÕßÏß³ÌÓÐÐÂÉÌÆ·
-        pthread_mutex_lock(&mutex);
-        pthread_cond_broadcast(&cond);
-        pthread_mutex_unlock(&mutex);
-
-        printf("Produced: %d\n", products[i]);
-        sleep(rand() % 3); // Ëæ»úÐÝÃßÒ»¶ÎÊ±¼ä
-    }
-    return NULL;
-}
-
-// Ïû·ÑÕßÏß³Ìº¯Êý
-void *consumer(void *arg) {
-    int i;
-    for (i = 0; i < NUM_PRODUCTS; i++) {
-        // µÈ´ýÉÌÆ·
-        pthread_mutex_lock(&mutex);
-        while (num_products == 0) {
-            pthread_cond_wait(&cond, &mutex);
-        }
-        pthread_mutex_unlock(&mutex);
-
-        // Ïû·ÑÉÌÆ·
-        printf("Consumed: %d\n", products[i]);
-        num_products--;
-    }
-    return NULL;
-}
-
-int main() {
-    pthread_t producer_thread, consumer_thread;
-
-    // ³õÊ¼»¯Ìõ¼þ±äÁ¿
-    if (pthread_cond_init(&cond, NULL) != 0) {
-        perror("pthread_cond_init failed");
-        return 1;
-    }
-
-    // ³õÊ¼»¯»¥³âËø
-    if (pthread_mutex_init(&mutex, NULL) != 0) {
-        perror("pthread_mutex_init failed");
-        return 1;
-    }
-
-    // ´´½¨Éú²úÕßÏß³Ì
-    if (pthread_create(&producer_thread, NULL, producer, NULL) != 0) {
-        perror("pthread_create failed for producer");
-        return 1;
-    }
-
-    // ´´½¨Ïû·ÑÕßÏß³Ì
-    if (pthread_create(&consumer_thread, NULL, consumer, NULL) != 0) {
-        perror("pthread_create failed for consumer");
-        return 1;
-    }
-
-    // µÈ´ýÏß³Ì½áÊø
-    pthread_join(producer_thread, NULL);
-    pthread_join(consumer_thread, NULL);
-
-    // Ïú»ÙÌõ¼þ±äÁ¿
-    pthread_cond_destroy(&cond);
-    // Ïú»Ù»¥³âËø
-    pthread_mutex_destroy(&mutex);
-
-    printf("Main thread completed successfully.\n");
-    return 0;
-}
+#include <stdio.h>
+
+#include <pthread.h>
+
+#include <unistd.h>
+
+#include <stdlib.h>
+
+#define NUM_PRODUCTS 10
+
+
+
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½
+
+int products[NUM_PRODUCTS];
+
+int num_products = 0;
+
+
+
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+pthread_cond_t cond;
+
+pthread_mutex_t mutex;
+
+
+
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß³Ìºï¿½ï¿½ï¿½
+
+void *producer(void *arg) {
+
+    int i;
+
+    for (i = 0; i < NUM_PRODUCTS; i++) {
+
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·
+
+        products[i] = i;
+
+        num_products++;
+
+
+
+        // Í¨Öªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·
+
+        pthread_mutex_lock(&mutex);
+
+        pthread_cond_broadcast(&cond);
+
+        pthread_mutex_unlock(&mutex);
+
+
+
+        printf("Produced: %d\n", products[i]);
+
+        sleep(rand() % 3); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ê±ï¿½ï¿½
+
+    }
+
+    return NULL;
+
+}
+
+
+
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß³Ìºï¿½ï¿½ï¿½
+
+void *consumer(void *arg) {
+
+    int i;
+
+    for (i = 0; i < NUM_PRODUCTS; i++) {
+
+        // ï¿½È´ï¿½ï¿½ï¿½Æ·
+
+        pthread_mutex_lock(&mutex);
+
+        while (num_products == 0) {
+
+            pthread_cond_wait(&cond, &mutex);
+
+        }
+
+        pthread_mutex_unlock(&mutex);
+
+
+
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·
+
+        printf("Consumed: %d\n", products[i]);
+
+        num_products--;
+
+    }
+
+    return NULL;
+
+}
+
+
+
+int main() {
+
+    pthread_t producer_thread, consumer_thread;
+
+
+
+    // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+    if (pthread_cond_init(&cond, NULL) != 0) {
+
+        perror("pthread_cond_init failed");
+
+        return 1;
+
+    }
+
+
+
+    // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+    if (pthread_mutex_init(&mutex, NULL) != 0) {
+
+        perror("pthread_mutex_init failed");
+
+        return 1;
+
+    }
+
+
+
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß³ï¿½
+
+    if (pthread_create(&producer_thread, NULL, producer, NULL) != 0) {
+
+        perror("pthread_create failed for producer");
+
+        return 1;
+
+    }
+
+
+
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß³ï¿½
+
+    if (pthread_create(&consumer_thread, NULL, consumer, NULL) != 0) {
+
+        perror("pthread_create failed for consumer");
+
+        return 1;
+
+    }
+
+
+
+    // ï¿½È´ï¿½ï¿½ß³Ì½ï¿½ï¿½ï¿½
+
+    pthread_join(producer_thread, NULL);
+
+    pthread_join(consumer_thread, NULL);
+
+
+
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+    pthread_cond_destroy(&cond);
+
+    // ï¿½ï¿½ï¿½Ù»ï¿½ï¿½ï¿½ï¿½ï¿½
+
+    pthread_mutex_destroy(&mutex);
+
+
+
+    printf("Main thread completed successfully.\n");
+
+    return 0;
+
+}
+

@@ -5,6 +5,11 @@
 #include <sys/wait.h>
 #include <stddef.h>
 #include <errno.h>
+#include <pthread.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+
 
 
 volatile sig_atomic_t goon = 1;
@@ -45,7 +50,6 @@ int main(int argc, char**argv)
  
     int sig = 0;
     while(goon){
-        alarm(1);
         sleep(1);
     }
  

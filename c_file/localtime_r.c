@@ -1,34 +1,47 @@
-#include <stdio.h>
-#include <time.h> // °üº¬time.hÒÔÊ¹ÓÃlocaltime_r()º¯Êý
-
-int main() {
-    // »ñÈ¡µ±Ç°Ê±¼äµÄtime_tÖµ
-    time_t now;
-    now = time(NULL);
-
-    // ·ÖÅäÄÚ´æÓÃÓÚstruct tm½á¹¹Ìå
-    struct tm *local_time;
-    local_time = (struct tm *)malloc(sizeof(struct tm));
-    if (local_time == NULL) {
-        perror("ÄÚ´æ·ÖÅäÊ§°Ü");
-        return 1;
-    }
-
-    // ½«time_tÖµ×ª»»Îª±¾µØÊ±¼äµÄstruct tmÖ¸Õë
-    local_time = localtime_r(&now, local_time);
-
-    // ¼ì²é×ª»»ÊÇ·ñ³É¹¦
-    if (local_time == NULL) {
-        perror("localtime_r()×ª»»Ê§°Ü");
-        free(local_time);
-        return 1;
-    }
-
-    // ´òÓ¡±¾µØÊ±¼ä
-    printf("±¾µØÊ±¼äÊÇ£º%s\n", asctime(local_time));
-
-    // ÊÍ·Å·ÖÅäµÄÄÚ´æ
-    free(local_time);
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <time.h> // ï¿½ï¿½ï¿½ï¿½time.hï¿½ï¿½Ê¹ï¿½ï¿½localtime_r()ï¿½ï¿½ï¿½ï¿½
+
+#include <stdlib.h>
+
+int main() {
+
+    time_t now;
+
+    now = time(NULL);
+
+    struct tm *local_time;
+
+    local_time = (struct tm *)malloc(sizeof(struct tm));
+
+    if (local_time == NULL) {
+
+        perror("ï¿½Ú´ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½");
+
+        return 1;
+
+    }
+
+
+    local_time = localtime_r(&now, local_time);
+
+
+    if (local_time == NULL) {
+
+        perror("localtime_r()×ªï¿½ï¿½Ê§ï¿½ï¿½");
+
+        free(local_time);
+
+        return 1;
+
+    }
+
+
+    printf("ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ç£ï¿½%s\n", asctime(local_time));
+
+    free(local_time);
+
+    return 0;
+
+}
+

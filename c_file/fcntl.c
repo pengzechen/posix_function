@@ -1,60 +1,120 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <errno.h>
-
-int main() {
-    const char *filename = "example.txt";
-    int fd;
-    int flags;
-    ssize_t bytesRead;
-    char buffer[1024];
-
-    // ´ò¿ªÎÄ¼þ
-    fd = open(filename, O_RDONLY);
-    if (fd == -1) {
-        perror("Error opening file");
-        return EXIT_FAILURE;
-    }
-
-    // ÉèÖÃÎÄ¼þÃèÊö·ûÎª·Ç×èÈûÄ£Ê½
-    flags = fcntl(fd, F_GETFL, 0);
-    if (flags == -1) {
-        perror("Error getting file flags");
-        close(fd);
-        return EXIT_FAILURE;
-    }
-    flags |= O_NONBLOCK;
-    if (fcntl(fd, F_SETFL, flags) == -1) {
-        perror("Error setting file flags");
-        close(fd);
-        return EXIT_FAILURE;
-    }
-
-    // Ñ­»·¶ÁÈ¡Êý¾ÝÖ±µ½ÎÄ¼þ½áÊø
-    while (1) {
-        // ³¢ÊÔ¶ÁÈ¡Êý¾Ý
-        bytesRead = read(fd, buffer, sizeof(buffer) - 1);
-        if (bytesRead == -1) {
-            // ¼ì²éÊÇ·ñÊÇÒòÎª·Ç×èÈûÄ£Ê½¶øµ¼ÖÂµÄEAGAIN´íÎó
-            if (errno != EAGAIN) {
-                perror("Error reading file");
-                break;
-            }
-        } else {
-            // ÒÆ³ý×Ö·û´®Ä©Î²µÄ»»ÐÐ·û£¨Èç¹ûÓÐµÄ»°£©
-            buffer[bytesRead] = '\0';
-            printf("Read: %s\n", buffer);
-        }
-
-        // ÕâÀï¿ÉÒÔÌí¼ÓË¯Ãß»òÆäËûµÈ´ý»úÖÆÀ´±ÜÃâ·±Ã¦µÈ´ý
-        // usleep(10000); // µÈ´ý10000Î¢Ãë£¨10ºÁÃë£©
-    }
-
-    // ¹Ø±ÕÎÄ¼þÃèÊö·û
-    close(fd);
-
-    // ³ÌÐòÕý³£ÍË³ö
-    return EXIT_SUCCESS;
-}
+#include <stdio.h>
+
+#include <stdlib.h>
+
+#include <unistd.h>
+
+#include <fcntl.h>
+
+#include <errno.h>
+
+
+
+int main() {
+
+    const char *filename = "example.txt";
+
+    int fd;
+
+    int flags;
+
+    ssize_t bytesRead;
+
+    char buffer[1024];
+
+
+
+    // ï¿½ï¿½ï¿½Ä¼ï¿½
+
+    fd = open(filename, O_RDONLY);
+
+    if (fd == -1) {
+
+        perror("Error opening file");
+
+        return EXIT_FAILURE;
+
+    }
+
+
+
+    // ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½
+
+    flags = fcntl(fd, F_GETFL, 0);
+
+    if (flags == -1) {
+
+        perror("Error getting file flags");
+
+        close(fd);
+
+        return EXIT_FAILURE;
+
+    }
+
+    flags |= O_NONBLOCK;
+
+    if (fcntl(fd, F_SETFL, flags) == -1) {
+
+        perror("Error setting file flags");
+
+        close(fd);
+
+        return EXIT_FAILURE;
+
+    }
+
+
+
+    // Ñ­ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
+
+    // while (1) {
+
+        // ï¿½ï¿½ï¿½Ô¶ï¿½È¡ï¿½ï¿½ï¿½ï¿½
+
+        bytesRead = read(fd, buffer, sizeof(buffer) - 1);
+
+        if (bytesRead == -1) {
+
+            // ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½EAGAINï¿½ï¿½ï¿½ï¿½
+
+            if (errno != EAGAIN) {
+
+                perror("Error reading file");
+
+                // break;
+
+            }
+
+        } else {
+
+            // ï¿½Æ³ï¿½ï¿½Ö·ï¿½ï¿½ï¿½Ä©Î²ï¿½Ä»ï¿½ï¿½Ð·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÄ»ï¿½ï¿½ï¿½
+
+            buffer[bytesRead] = '\0';
+
+            printf("Read: %s\n", buffer);
+
+        }
+
+
+
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¯ï¿½ß»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â·±Ã¦ï¿½È´ï¿½
+
+        // usleep(10000); // ï¿½È´ï¿½10000Î¢ï¿½ë£¨10ï¿½ï¿½ï¿½ë£©
+
+    // }
+
+
+
+    // ï¿½Ø±ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+    close(fd);
+
+
+
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½
+
+    return EXIT_SUCCESS;
+
+}
+

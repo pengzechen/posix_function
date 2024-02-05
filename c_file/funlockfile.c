@@ -31,30 +31,13 @@ int main() {
     }
 
 
-
-    // �����ļ�������
-
-    flockfile(fd);
-
-
-
-    // ��ʱ�ļ��ѱ����������԰�ȫ�ؽ���д����
+    flockfile(fdopen(fd, "w+"));
 
     printf("File is locked. Writing to file...\n");
 
-    // д�����ݵ��ļ�
 
-    // ...
+    funlockfile(fdopen(fd, "w+"));
 
-
-
-    // �����ļ�������
-
-    funlockfile(fd);
-
-
-
-    // �ر��ļ�������
 
     if (close(fd) == -1) {
 
@@ -64,9 +47,6 @@ int main() {
 
     }
 
-
-
-    // ���������˳�
 
     return EXIT_SUCCESS;
 

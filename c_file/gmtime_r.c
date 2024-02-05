@@ -1,22 +1,36 @@
-#include <stdio.h>
-#include <time.h> // 包含time.h以使用gmtime_r()函数
-
-int main() {
-    time_t now = time(NULL); // 获取当前时间
-    struct tm *gmt;
-
-    // 使用gmtime_r()将当前时间转换为GMT时间
-    gmt = gmtime_r(&now, &gmt);
-
-    if (gmt == NULL) {
-        perror("gmtime_r() 失败");
-        return 1;
-    }
-
-    // 打印GMT时间
-    printf("GMT时间：%d-%d-%d %d:%d:%d\n",
-           gmt->tm_year + 1900, gmt->tm_mon + 1, gmt->tm_mday,
-           gmt->tm_hour, gmt->tm_min, gmt->tm_sec);
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <time.h> // 锟斤拷锟斤拷time.h锟斤拷使锟斤拷gmtime_r()锟斤拷锟斤拷
+
+
+
+int main() {
+
+    const time_t now = time(NULL); // 锟斤拷取锟斤拷前时锟斤拷
+
+    struct tm * gmt;
+
+
+    gmt = gmtime_r(&now, gmt);
+
+    if (gmt == NULL) {
+
+        perror("gmtime_r() 失锟斤拷");
+
+        return 1;
+
+    }
+
+
+    printf("%d-%d-%d %d:%d:%d\n",
+
+           gmt->tm_year + 1900, gmt->tm_mon + 1, gmt->tm_mday,
+
+           gmt->tm_hour, gmt->tm_min, gmt->tm_sec);
+
+
+
+    return 0;
+
+}
+

@@ -1,35 +1,71 @@
-#include <stdio.h>
-#include <pthread.h>
-#include <unistd.h>
-
-// Ïß³Ìº¯Êý£¬Ö´ÐÐÒ»Ð©ÈÎÎñ
-void *thread_function(void *arg) {
-    printf("Thread started. Argument: %ld\n", (long)arg);
-
-    // Ä£ÄâÒ»Ð©¹¤×÷
-    for (int i = 0; i < 5; i++) {
-        printf("Thread is working...\n");
-        sleep(1);
-    }
-
-    printf("Thread finished working.\n");
-    return NULL;
-}
-
-int main() {
-    pthread_t thread;
-    long arg = 42;
-
-    // ´´½¨Ò»¸ö·ÖÀëÏß³Ì
-    if (pthread_create(&thread, NULL, thread_function, (void *)arg) != 0) {
-        perror("pthread_create failed");
-        return 1;
-    }
-
-    // detach the thread
-    pthread_detach(thread);
-
-    printf("Main thread is exiting immediately. The detached thread will continue to run.\n");
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <pthread.h>
+
+#include <unistd.h>
+
+
+#include <stdlib.h>
+
+// ï¿½ß³Ìºï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½Ò»Ð©ï¿½ï¿½ï¿½ï¿½
+
+void *thread_function(void *arg) {
+
+    printf("Thread started. Argument: %ld\n", (long)arg);
+
+
+
+    // Ä£ï¿½ï¿½Ò»Ð©ï¿½ï¿½ï¿½ï¿½
+
+    for (int i = 0; i < 5; i++) {
+
+        printf("Thread is working...\n");
+
+        sleep(1);
+
+    }
+
+
+
+    printf("Thread finished working.\n");
+
+    return NULL;
+
+}
+
+
+
+int main() {
+
+    pthread_t thread;
+
+    long arg = 42;
+
+
+
+    // ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß³ï¿½
+
+    if (pthread_create(&thread, NULL, thread_function, (void *)arg) != 0) {
+
+        perror("pthread_create failed");
+
+        return 1;
+
+    }
+
+
+
+    // detach the thread
+
+    pthread_detach(thread);
+
+
+
+    printf("Main thread is exiting immediately. The detached thread will continue to run.\n");
+
+
+
+    return 0;
+
+}
+

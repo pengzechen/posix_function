@@ -1,41 +1,82 @@
-#include <stdio.h>
-#include <pthread.h>
-#include <unistd.h>
-
-// Ïß³Ìº¯Êý£¬Ö´ÐÐÒ»Ð©ÈÎÎñÈ»ºóÍË³ö
-void *thread_function(void *arg) {
-    printf("Thread started. Argument: %ld\n", (long)arg);
-
-    // Ä£ÄâÒ»Ð©¹¤×÷
-    for (int i = 0; i < 5; i++) {
-        printf("Thread is working...\n");
-        sleep(1);
-    }
-
-    // Í¨ÖªÖ÷Ïß³ÌÏß³Ì¼´½«ÍË³ö
-    printf("Thread is about to exit.\n");
-
-    // ÍË³öÏß³Ì
-    pthread_exit(NULL);
-    return NULL; // Õâ¸ö·µ»ØÖµ²»»á±»Ê¹ÓÃ
-}
-
-int main() {
-    pthread_t thread;
-    long arg = 42;
-
-    // ´´½¨Ïß³Ì
-    if (pthread_create(&thread, NULL, thread_function, (void *)arg) != 0) {
-        perror("pthread_create failed");
-        return 1;
-    }
-
-    // µÈ´ýÏß³ÌÍê³É
-    if (pthread_join(thread, NULL) != 0) {
-        perror("pthread_join failed");
-        return 1;
-    }
-
-    printf("Main thread completed successfully.\n");
-    return 0;
-}
+#include <stdio.h>
+
+#include <pthread.h>
+
+#include <unistd.h>
+
+#include <stdlib.h>
+
+// ï¿½ß³Ìºï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½Ò»Ð©ï¿½ï¿½ï¿½ï¿½È»ï¿½ï¿½ï¿½Ë³ï¿½
+
+void *thread_function(void *arg) {
+
+    printf("Thread started. Argument: %ld\n", (long)arg);
+
+
+
+    // Ä£ï¿½ï¿½Ò»Ð©ï¿½ï¿½ï¿½ï¿½
+
+    for (int i = 0; i < 5; i++) {
+
+        printf("Thread is working...\n");
+
+        sleep(1);
+
+    }
+
+
+
+    // Í¨Öªï¿½ï¿½ï¿½ß³ï¿½ï¿½ß³Ì¼ï¿½ï¿½ï¿½ï¿½Ë³ï¿½
+
+    printf("Thread is about to exit.\n");
+
+
+
+    // ï¿½Ë³ï¿½ï¿½ß³ï¿½
+
+    pthread_exit(NULL);
+
+    return NULL; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½á±»Ê¹ï¿½ï¿½
+
+}
+
+
+
+int main() {
+
+    pthread_t thread;
+
+    long arg = 42;
+
+
+
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ß³ï¿½
+
+    if (pthread_create(&thread, NULL, thread_function, (void *)arg) != 0) {
+
+        perror("pthread_create failed");
+
+        return 1;
+
+    }
+
+
+
+    // ï¿½È´ï¿½ï¿½ß³ï¿½ï¿½ï¿½ï¿½
+
+    if (pthread_join(thread, NULL) != 0) {
+
+        perror("pthread_join failed");
+
+        return 1;
+
+    }
+
+
+
+    printf("Main thread completed successfully.\n");
+
+    return 0;
+
+}
+

@@ -2,7 +2,9 @@
 #include <pthread.h>
 #include <sched.h>
 #include <stdio.h>
-// #include "check.h"
+#include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
  
 #define  BUMP_PRIO     1
 #define  PRIORITY_MIN_NP  0
