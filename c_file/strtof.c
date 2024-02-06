@@ -11,7 +11,7 @@ int main() {
 
     float value = strtof(str, NULL);
 
-    printf("ת����ĵ����ȸ������ǣ�%f\n", value);
+    printf("value: %f\n", value);
 
     return 0;
 

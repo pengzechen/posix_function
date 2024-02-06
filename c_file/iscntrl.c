@@ -7,11 +7,11 @@ int main() {
 
     if (iscntrl(ch)) {
 
-        printf("�ַ� %c �ǿ����ַ���\n", ch);
+        printf(" %c \n", ch);
 
     } else {
 
-        printf("�ַ� %c ���ǿ����ַ���\n", ch);
+        printf("else %c \n", ch);
 
     }
 

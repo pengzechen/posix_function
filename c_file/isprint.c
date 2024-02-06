@@ -8,11 +8,11 @@ int main() {
 
     if (isprint(ch)) {
 
-        printf("�ַ� %c �ǿɴ�ӡ�ַ���\n", ch);
+        printf(" %c \n", ch);
 
     } else {
 
-        printf("�ַ� %c ���ǿɴ�ӡ�ַ���\n", ch);
+        printf("else %c \n", ch);
 
     }
 

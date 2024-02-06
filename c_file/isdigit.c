@@ -8,11 +8,11 @@ int main() {
 
     if (isdigit(ch)) {
 
-        printf("�ַ� %c ��ʮ�������֡�\n", ch);
+        printf(" %c \n", ch);
 
     } else {
 
-        printf("�ַ� %c ����ʮ�������֡�\n", ch);
+        printf("else %c \n", ch);
 
     }
 

@@ -14,11 +14,11 @@ int main() {
 
     if (error_message == NULL) {
 
-        printf("�޷��ҵ�������Ϣ��\n");
+        printf("error \n");
 
     } else {
 
-        printf("������� %d: %s\n", error_code, error_message);
+        printf("error code %d: %s\n", error_code, error_message);
 
     }
 

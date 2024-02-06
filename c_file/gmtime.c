@@ -14,13 +14,13 @@ int main() {
 
     if (gmt == NULL) {
 
-        perror("gmtime() ʧ��");
+        perror("gmtime() error");
 
         return 1;
 
     }
 
-    printf("GMTʱ�䣺%d-%d-%d %d:%d:%d\n",
+    printf("time: %d-%d-%d %d:%d:%d\n",
 
            gmt->tm_year + 1900, gmt->tm_mon + 1, gmt->tm_mday,
 

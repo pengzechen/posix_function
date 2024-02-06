@@ -8,11 +8,11 @@ int main() {
 
     if (current_time != NULL) {
 
-        printf("��ǰʱ�䣺 %s", current_time);
+        printf("current time: %s", current_time);
 
     } else {
 
-        fprintf(stderr, "��ȡ��ǰʱ��ʧ��\n");
+        fprintf(stderr, "error\n");
 
     }
 

@@ -26,7 +26,7 @@ int main() {
     }
 
 
-    printf("��ǰʱ�䣨�ַ�����ʽ���� %s\n", time_buffer);
+    printf("time buffer: %s\n", time_buffer);
 
     return 0;
 }

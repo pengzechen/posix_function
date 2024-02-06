@@ -9,7 +9,7 @@ int main() {
 
     value = atol(str);
 
-    printf("ת����ĳ������� %ld\n", value);
+    printf("value: %ld\n", value);
 
     return 0;
 }

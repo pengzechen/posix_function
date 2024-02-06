@@ -14,15 +14,15 @@ int main() {
 
     if (result == 0) {
 
-        printf("�ַ���'%s'��'%s'��ȡ�\n", str1, str2);
+        printf("'%s''%s'\n", str1, str2);
 
     } else if (result > 0) {
 
-        printf("�ַ���'%s'����'%s'��\n", str1, str2);
+        printf("'%s''%s'\n", str1, str2);
 
     } else {
 
-        printf("�ַ���'%s'С��'%s'��\n", str1, str2);
+        printf("'%s''%s'\n", str1, str2);
 
     }
 

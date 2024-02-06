@@ -9,11 +9,11 @@ int main() {
 
     if (isspace(ch)) {
 
-        printf("�ַ� %c �ǿհ��ַ���\n", ch);
+        printf(" %c \n", ch);
 
     } else {
 
-        printf("�ַ� %c ���ǿհ��ַ���\n", ch);
+        printf("else %c \n", ch);
 
     }
 

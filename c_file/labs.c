@@ -9,7 +9,7 @@ int main() {
 
     long int abs_num = labs(num);
 
-    printf("��ֵ %ld �ľ���ֵ�� %ld��\n", num, abs_num);
+    printf("num: %ld absnum:  %ld\n", num, abs_num);
 
     return 0;
 

@@ -13,11 +13,11 @@ int main() {
 
     if (found != NULL) {
 
-        printf("�ַ�'%c'�������еĵ�ַ�ǣ�%p\n", to_find, found);
+        printf("  '%c'  %p\n", to_find, found);
 
     } else {
 
-        printf("�ַ�'%c'δ���������ҵ���\n", to_find);
+        printf("  '%c'  \n", to_find);
 
     }
 

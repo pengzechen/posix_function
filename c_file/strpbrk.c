@@ -12,11 +12,11 @@ int main() {
 
     if (found != NULL) {
 
-        printf("�ҵ����ַ������еĵ�һ���ַ���'%c'\n", *found);
+        printf("*found: '%c'\n", *found);
 
     } else {
 
-        printf("û���ҵ��ַ������е��κ��ַ���\n");
+        printf("no\n");
 
     }
 

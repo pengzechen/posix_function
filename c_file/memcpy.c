@@ -11,7 +11,7 @@ int main() {
 
     memcpy(dest, src, sizeof(src));
 
-    printf("���ƺ���ַ����ǣ�%s\n", dest);
+    printf("dest %s\n", dest);
 
     return 0;
 

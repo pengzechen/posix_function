@@ -12,7 +12,7 @@ int main() {
 
     long long value = strtoll(str, NULL, 10);
 
-    printf("ת����ĳ��������ǣ�%lld\n", value);
+    printf("value: %lld\n", value);
 
     return 0;
 

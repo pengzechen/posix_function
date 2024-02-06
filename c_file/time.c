@@ -15,7 +15,7 @@ int main() {
     local = localtime(&now);
 
 
-    printf("��ǰ�����ں�ʱ���ǣ�%d-%d-%d %d:%d:%d\n",
+    printf("time: %d-%d-%d %d:%d:%d\n",
 
            local->tm_year + 1900, local->tm_mon + 1, local->tm_mday,
 

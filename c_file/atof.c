@@ -12,7 +12,7 @@ int main() {
 
     value = atof(str);
 
-    printf("ת����ĸ������� %f\n", value);
+    printf("value: %f\n", value);
 
     return 0;
 }

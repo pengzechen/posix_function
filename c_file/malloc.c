@@ -8,7 +8,7 @@ int main() {
 
     if (ptr == NULL) {
 
-        perror("�ڴ����ʧ��");
+        perror("err");
 
         return 1;
 
@@ -16,7 +16,7 @@ int main() {
 
     *ptr = 42;
 
-    printf("������ڴ���ֵ�ǣ�%d\n", *ptr);
+    printf(" %d\n", *ptr);
 
     free(ptr);
 

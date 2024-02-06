@@ -12,7 +12,7 @@ int main() {
 
     long double value = strtold(str, NULL);
 
-    printf("ת����ĳ�˫���ȸ������ǣ�%Lf\n", value);
+    printf("value: %Lf\n", value);
 
     return 0;
 

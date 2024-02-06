@@ -11,7 +11,7 @@ int main() {
     strncpy(destination, source, 5);
 
 
-    printf("���ƺ���ַ����ǣ�%s\n", destination);
+    printf("des: %s\n", destination);
 
     return 0;
 

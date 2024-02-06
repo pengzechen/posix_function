@@ -24,7 +24,7 @@ int main() {
 
     for (int i = 0; i < word_count; i++) {
 
-        printf("���� %d: %s\n", i + 1, words[i]);
+        printf("key, value %d: %s\n", i + 1, words[i]);
 
     }
 

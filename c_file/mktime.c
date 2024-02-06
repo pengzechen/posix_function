@@ -13,7 +13,7 @@ int main() {
     timeinfo.tm_sec = 0;           
     time_t now = mktime(&timeinfo);
 
-    printf("ʱ����ǣ�%ld\n", now);
+    printf("now: %ld\n", now);
 
     return 0;
 

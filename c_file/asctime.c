@@ -14,7 +14,7 @@ int main() {
 
     char *time_str = asctime(local);
 
-    printf("��ǰʱ�䣨�ַ�����ʽ���� %s\n", time_str);
+    printf("time_str: %s\n", time_str);
 
     return 0;
 }

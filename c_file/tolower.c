@@ -8,7 +8,7 @@ int main() {
 
     char lower_case = tolower(ch);
 
-    printf("ת�����Сд��ĸ�ǣ�%c\n", lower_case);
+    printf("lower_case %c\n", lower_case);
 
     return 0;
 

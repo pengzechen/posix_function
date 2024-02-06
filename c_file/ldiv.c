@@ -15,7 +15,7 @@ int main() {
 
     result = ldiv(numerator, denominator);
 
-    printf("���� %ld�������� %ld��\n", result.quot, result.rem);
+    printf(" %ld %ld \n", result.quot, result.rem);
 
 
     return 0;

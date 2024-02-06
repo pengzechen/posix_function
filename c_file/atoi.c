@@ -9,7 +9,7 @@ int main() {
 
     value = atoi(str);
 
-    printf("ת����������� %d\n", value);
+    printf("value: %d\n", value);
 
     return 0;
 

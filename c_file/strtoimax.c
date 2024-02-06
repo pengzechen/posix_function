@@ -14,7 +14,7 @@ int main() {
 
     intmax_t value = strtoimax(str, NULL, 10);
 
-    printf("ת�����intmax_t���������ǣ�%jd\n", value);
+    printf("value: %jd\n", value);
 
     return 0;
 }

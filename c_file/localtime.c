@@ -12,7 +12,7 @@ int main() {
 
     local_time = localtime(&now);
 
-    printf("����ʱ���ǣ�%s\n", asctime(local_time));
+    printf("time: %s\n", asctime(local_time));
 
     return 0;
 

@@ -15,7 +15,7 @@ int main() {
 
     if (local_time == NULL) {
 
-        perror("�ڴ����ʧ��");
+        perror("local_time  error");
 
         return 1;
 
@@ -26,7 +26,7 @@ int main() {
 
     if (local_time == NULL) {
 
-        perror("localtime_r()ת��ʧ��");
+        perror("localtime_r() error");
 
         free(local_time);
 
@@ -35,7 +35,7 @@ int main() {
     }
 
 
-    printf("����ʱ���ǣ�%s\n", asctime(local_time));
+    printf("time %s\n", asctime(local_time));
 
     free(local_time);
 

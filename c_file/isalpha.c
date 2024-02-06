@@ -8,11 +8,11 @@ int main() {
 
     if (isalpha(ch)) {
 
-        printf("�ַ� %c ����ĸ��\n", ch);
+        printf(" %c \n", ch);
 
     } else {
 
-        printf("�ַ� %c ������ĸ��\n", ch);
+        printf("else %c \n", ch);
 
     }
 

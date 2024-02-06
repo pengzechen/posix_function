@@ -11,13 +11,13 @@ int main() {
 
     if (array == NULL) {
 
-        fprintf(stderr, "�ڴ����ʧ��\n");
+        fprintf(stderr, "error\n");
 
         return 1;
 
     }
 
-    printf("������ڴ��ַ�� %p\n", array);
+    printf("array: %p\n", array);
 
     free(array);
 

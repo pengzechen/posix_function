@@ -10,13 +10,13 @@ int main() {
 
     fegetenv(&env);
 
-    printf("��ǰ������ģʽ��FE_TONEAREST\n");
+    printf("get env\n");
 
     fesetround(FE_UPWARD); 
 
     fegetenv(&env);
 
-    printf("�µ�����ģʽ��FE_UPWARD\n");
+    printf("get env\n");
 
 
 

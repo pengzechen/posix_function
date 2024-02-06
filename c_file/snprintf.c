@@ -9,7 +9,7 @@ int main() {
 
     snprintf(buffer, sizeof(buffer), "Hello, %s!", "World");
 
-    printf("�������е������ǣ�%s\n", buffer);
+    printf("buffer: %s\n", buffer);
 
     return 0;
 

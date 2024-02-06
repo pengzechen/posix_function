@@ -20,7 +20,7 @@ int main() {
 
     strftime(time_buffer, sizeof(time_buffer), "%Y-%m-%d %H:%M:%S", local);
 
-    printf("��ǰʱ���ǣ�%s\n", time_buffer);
+    printf("time buffer: %s\n", time_buffer);
 
     return 0;
 

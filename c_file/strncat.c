@@ -10,7 +10,7 @@ int main() {
 
     strncat(destination, source, 5);
 
-    printf("���Ӻ���ַ����ǣ�%s\n", destination);
+    printf("destination: %s\n", destination);
     
     return 0;
 

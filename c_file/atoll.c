@@ -10,7 +10,7 @@ int main() {
 
     value = atoll(str);
 
-    printf("ת����ĳ��������� %lld\n", value);
+    printf("value: %lld\n", value);
 
     return 0;
 }

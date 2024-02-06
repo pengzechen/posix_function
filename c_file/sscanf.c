@@ -11,7 +11,7 @@ int main() {
 
     float floatnum;
 
-    printf("������һ�����������͸��������ַ�����");
+    printf("input: ");
 
     fgets(input, sizeof(input), stdin);
 
@@ -22,9 +22,9 @@ int main() {
     sscanf(input, "%d %f", &num, &floatnum);
 
 
-    printf("�����ǣ�%d\n", num);
+    printf("num: %d\n", num);
 
-    printf("�������ǣ�%f\n", floatnum);
+    printf("float: %f\n", floatnum);
 
 
 

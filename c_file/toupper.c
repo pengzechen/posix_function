@@ -9,7 +9,7 @@ int main() {
 
     char upper_case = toupper(ch);
 
-    printf("ת����Ĵ�д��ĸ�ǣ�%c\n", upper_case);
+    printf("upper_case %c\n", upper_case);
 
     return 0;
 

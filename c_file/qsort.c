@@ -34,7 +34,7 @@ int main() {
 
     qsort(array, n, sizeof(int), compare);
 
-    printf("�����������ǣ�");
+    printf("qsort");
 
     for (int i = 0; i < n; i++) {
 

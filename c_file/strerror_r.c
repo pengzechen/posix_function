@@ -18,11 +18,11 @@ int main() {
 
     if (result == 0) {
 
-        printf("������� %d: %s\n", error_code, error_buffer);
+        printf("error code: %d: %s\n", error_code, error_buffer);
 
     } else {
 
-        printf("�޷���ȡ������Ϣ��%s\n", error_buffer);
+        printf("error buf%s\n", error_buffer);
 
     }
 

@@ -32,7 +32,7 @@ int tm_isdst;     /* 夏令时标识符，实行夏令时的时候，tm_isdst为
 
     } else {
 
-        fprintf(stderr, "��ȡ��ǰʱ��ʧ��\n");
+        fprintf(stderr, "error\n");
 
     }
 

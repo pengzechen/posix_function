@@ -8,11 +8,11 @@ int main() {
 
     if (islower(ch)) {
 
-        printf("�ַ� %c ��Ӣ��Сд��ĸ��\n", ch);
+        printf(" %c \n", ch);
 
     } else {
 
-        printf("�ַ� %c ����Ӣ��Сд��ĸ��\n", ch);
+        printf("else %c \n", ch);
 
     }
 

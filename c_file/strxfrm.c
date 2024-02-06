@@ -30,14 +30,14 @@ int main() {
 
     strxfrm(transformed2, str2, len2);
 
-    printf("ת������ַ���1��%s\n", transformed1);
+    printf("transformed1 %s\n", transformed1);
 
-    printf("ת������ַ���2��%s\n", transformed2);
+    printf("transformed2 %s\n", transformed2);
 
 
     int result = strcmp(transformed1, transformed2);
 
-    printf("�ȽϽ����%d\n", result);
+    printf("result %d\n", result);
 
 
 

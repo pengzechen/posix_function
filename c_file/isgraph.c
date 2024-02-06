@@ -8,11 +8,11 @@ int main() {
 
     if (isgraph(ch)) {
 
-        printf("�ַ� %c ��ͼ���ַ���\n", ch);
+        printf(" %c \n", ch);
 
     } else {
 
-        printf("�ַ� %c ����ͼ���ַ���\n", ch);
+        printf("else %c \n", ch);
 
     }
 

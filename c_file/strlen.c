@@ -8,7 +8,7 @@ int main() {
 
     int length = strlen(string);
 
-    printf("�ַ����ĳ����ǣ�%d\n", length);
+    printf("length: %d\n", length);
 
     return 0;
 

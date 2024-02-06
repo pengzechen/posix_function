@@ -8,7 +8,7 @@ int main() {
 
     if (ptr == NULL) {
 
-        fprintf(stderr, "�ڴ����ʧ��\n");
+        fprintf(stderr, "malloc error\n");
 
         return 1;
 
@@ -22,7 +22,7 @@ int main() {
     }
 
 
-    printf("ԭʼ�ڴ�����ݣ�");
+    printf("old");
 
     for (int i = 0; i < 10; i++) {
 
@@ -37,7 +37,7 @@ int main() {
 
     if (ptr == NULL) {
 
-        fprintf(stderr, "�ڴ����·���ʧ��\n");
+        fprintf(stderr, "realloc error\n");
 
         free(ptr); 
 
@@ -45,7 +45,7 @@ int main() {
 
     }
 
-    printf("���·������ڴ�����ݣ�");
+    printf("new");
 
     for (int i = 0; i < 20; i++) {
 

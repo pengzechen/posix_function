@@ -8,11 +8,11 @@ int main() {
 
     if (isupper(ch)) {
 
-        printf("�ַ� %c ��Ӣ�Ĵ�д��ĸ��\n", ch);
+        printf(" %c \n", ch);
 
     } else {
 
-        printf("�ַ� %c ����Ӣ�Ĵ�д��ĸ��\n", ch);
+        printf("else %c \n", ch);
 
     }
 

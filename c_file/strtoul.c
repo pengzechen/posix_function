@@ -13,7 +13,7 @@ int main() {
     unsigned long value = strtoul(str, NULL, 10);
 
 
-    printf("ת������޷��ų��������ǣ�%lu\n", value);
+    printf("value: %lu\n", value);
 
 
     return 0;

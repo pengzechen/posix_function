@@ -17,7 +17,7 @@ int main() {
 
     } else {
 
-        printf("�ַ�'%c'���ַ�����û���ҵ���\n", to_find);
+        printf("char: '%c'\n", to_find);
 
     }
 

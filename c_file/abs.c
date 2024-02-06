@@ -10,9 +10,9 @@ int main() {
 
     double abs_result = abs(num);
 
-    printf("ԭʼ��ֵ�� %f\n", num);
+    printf("num: %f\n", num);
 
-    printf("����ֵ�� %f\n", abs_result);
+    printf("abs result: %f\n", abs_result);
 
     return 0;
 }

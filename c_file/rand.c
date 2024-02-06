@@ -6,7 +6,7 @@ int main() {
 
     int randomNumber = rand();
 
-    printf("���ɵ�������ǣ�%d\n", randomNumber);
+    printf("randowm Number: %d\n", randomNumber);
 
     return 0;
 }

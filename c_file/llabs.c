@@ -9,7 +9,7 @@ int main() {
 
     long long int abs_num = llabs(num);
 
-    printf("�������� %lld �ľ���ֵ�� %lld��\n", num, abs_num);
+    printf(" %lld %lld \n", num, abs_num);
 
 
     return 0;

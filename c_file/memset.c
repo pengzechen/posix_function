@@ -8,7 +8,7 @@ int main() {
 
     memset(buffer, 0, sizeof(buffer));
 
-    printf("���ú���ڴ�������ǣ�%s\n", buffer);
+    printf("buffer: %s\n", buffer);
 
     return 0;
 }

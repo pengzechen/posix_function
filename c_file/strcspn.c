@@ -9,7 +9,7 @@ int main() {
 
     int length = strcspn(str, chars_to_ignore);
 
-    printf("����Ϊ��%d\n", length);
+    printf("length: %d\n", length);
     
     return 0;
 

@@ -14,11 +14,11 @@ int main() {
 
     if (found != NULL) {
 
-        printf("�ҵ����ַ���'%s'�������ַ���'%s'�е�λ���ǣ�%ld\n", str2, str1, found - str1);
+        printf("str2: '%s'str1: '%s' found - str1%ld\n", str2, str1, found - str1);
 
     } else {
 
-        printf("û���ҵ��ַ���'%s'��\n", str2);
+        printf("str2: '%s'\n", str2);
 
     }
 

@@ -9,7 +9,7 @@ int main() {
 
     if (ptr == NULL) {
 
-        fprintf(stderr, "�ڴ����ʧ��\n");
+        fprintf(stderr, "malloc error\n");
 
         return 1;
 
@@ -17,7 +17,7 @@ int main() {
 
     *ptr = 42;
 
-    printf("������ڴ��е�ֵ��%d\n", *ptr);
+    printf("*ptr: %d\n", *ptr);
 
     free(ptr);
 

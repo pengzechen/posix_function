@@ -10,7 +10,7 @@ int main() {
 
     double value = strtod(str, NULL);
 
-    printf("ת�����˫���ȸ������ǣ�%f\n", value);
+    printf("value: %f\n", value);
 
     return 0;
 

@@ -12,7 +12,7 @@ int main() {
 
     result = lldiv(numerator, denominator);
 
-    printf("���� %lld�������� %lld��\n", result.quot, result.rem);
+    printf(" %lld %lld \n", result.quot, result.rem);
 
 
     return 0;

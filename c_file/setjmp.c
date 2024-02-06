@@ -8,11 +8,11 @@ jmp_buf main_buffer;
 
 void do_longjmp(void) {
 
-    printf("���� do_longjmp ����\n");
+    printf("start do_longjmp\n");
 
     longjmp(main_buffer, 1);
 
-    printf("���� do_longjmp �еĴ��룬�����ᱻִ��\n");
+    printf(" do_longjmp end\n");
 
 }
 
@@ -23,14 +23,14 @@ int main() {
 
     if (!setjmp(main_buffer)) {
 
-        printf("��һ�ε��� do_longjmp ֮ǰ\n");
+        printf(" do_longjmp \n");
         do_longjmp();
 
-        printf("���� main �����еĴ��룬���� longjmp ֮�󲻻ᱻִ��\n");
+        printf(" main  longjmp \n");
 
     } else {
 
-        printf("�ص� main ����\n");
+        printf(" main \n");
 
     }
 

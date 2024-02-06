@@ -23,7 +23,7 @@ int main() {
 
     if (specified_timestamp == -1) {
 
-        fprintf(stderr, "ָ����ʱ���ʽ����ȷ\n");
+        fprintf(stderr, "error\n");
 
         return 1;
 
@@ -33,7 +33,7 @@ int main() {
 
     time_difference = difftime(current_timestamp, specified_timestamp);
 
-    printf("��ǰʱ����ָ��ʱ��֮���ʱ���룩��%f\n", time_difference);
+    printf("time difference%f\n", time_difference);
 
     return 0;
 

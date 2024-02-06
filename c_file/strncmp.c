@@ -14,15 +14,15 @@ int main() {
 
     if (result == 0) {
 
-        printf("�ַ�����ͬ��\n");
+        printf("error \n");
 
     } else if (result < 0) {
 
-        printf("string1 < string2��\n");
+        printf("string1 < string2\n");
 
     } else {
 
-        printf("string1 > string2��\n");
+        printf("string1 > string2\n");
 
     }
 
@@ -30,15 +30,15 @@ int main() {
 
     if (result == 0) {
 
-        printf("�ַ�����ͬ��\n");
+        printf("error\n");
 
     } else if (result < 0) {
 
-        printf("string1 < string3��\n");
+        printf("string1 < string3\n");
 
     } else {
 
-        printf("string1 > string3��\n");
+        printf("string1 > string3\n");
 
     }
 

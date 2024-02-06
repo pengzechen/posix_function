@@ -8,11 +8,11 @@ int main() {
 
     if (ispunct(ch)) {
 
-        printf("�ַ� %c �Ǳ����š�\n", ch);
+        printf(" %c \n", ch);
 
     } else {
 
-        printf("�ַ� %c ���Ǳ����š�\n", ch);
+        printf("else %c \n", ch);
 
     }
 
