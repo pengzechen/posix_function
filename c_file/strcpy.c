@@ -1,15 +1,32 @@
-#include <stdio.h>
-
-int main() {
-    // ¶¨ÒåÁ½¸ö×Ö·û´®±äÁ¿
-    char source[] = "Hello, World!";
-    char destination[20]; // È·±£destination×ã¹»´óÒÔ´æ´¢source×Ö·û´®
-
-    // Ê¹ÓÃstrcpy()º¯Êý½«source×Ö·û´®¸´ÖÆµ½destination×Ö·û´®ÖÐ
-    strcpy(destination, source);
-
-    // ´òÓ¡¸´ÖÆºóµÄdestination×Ö·û´®
-    printf("%s\n", destination);
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <string.h>
+
+#include <stdlib.h>
+
+int main() {
+
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+    char source[] = "Hello, World!";
+
+    char destination[20]; // È·ï¿½ï¿½destinationï¿½ã¹»ï¿½ï¿½ï¿½Ô´æ´¢sourceï¿½Ö·ï¿½ï¿½ï¿½
+
+
+
+    // Ê¹ï¿½ï¿½strcpy()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sourceï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½destinationï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½
+
+    strcpy(destination, source);
+
+
+
+    // ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½Æºï¿½ï¿½destinationï¿½Ö·ï¿½ï¿½ï¿½
+
+    printf("%s\n", destination);
+
+
+
+    return 0;
+
+}
+

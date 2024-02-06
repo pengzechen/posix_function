@@ -10,7 +10,12 @@
 
 #include <unistd.h>
 
-#define PATH_MAX 300
+#include <dirent.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+
+
+#define PATH_MAX 4096
 
 int main() {
 
@@ -32,7 +37,7 @@ int main() {
     }
 
 
-    snprintf(directory_path, PATH_MAX, "%s/%s", current_directory, directory_name);
+    snprintf(directory_path, PATH_MAX+128, "%s/%s", current_directory, directory_name);
 
 
     int result = mkdir(directory_path, 0755);

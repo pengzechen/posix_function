@@ -1,15 +1,30 @@
-#include <stdio.h>
-
-int main() {
-    // ¶¨ÒåÁ½¸ö×Ö·û´®±äÁ¿
-    char str[] = "Hello, World!";
-    char chars_to_ignore[] = "abc";
-
-    // Ê¹ÓÃstrcspn()º¯Êý¼ÆËãstrÖÐ²»ÊôÓÚchars_to_ignoreµÄ×Ö·û´®Ç°×ºµÄ³¤¶È
-    int length = strcspn(str, chars_to_ignore);
-
-    // ´òÓ¡¼ÆËã³öµÄ³¤¶È
-    printf("³¤¶ÈÎª£º%d\n", length);
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <string.h>
+
+int main() {
+
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+    char str[] = "Hello, World!";
+
+    char chars_to_ignore[] = "abc";
+
+
+
+    // Ê¹ï¿½ï¿½strcspn()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½strï¿½Ð²ï¿½ï¿½ï¿½ï¿½ï¿½chars_to_ignoreï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½Ç°×ºï¿½Ä³ï¿½ï¿½ï¿½
+
+    int length = strcspn(str, chars_to_ignore);
+
+
+
+    // ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½ï¿½
+
+    printf("ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½%d\n", length);
+
+
+
+    return 0;
+
+}
+

@@ -8,37 +8,21 @@
 
 int main() {
 
-    // ʹ�� tmpnam() ����һ����ʱ�ļ���
+    char temp_template[] = "/tmp/htp.XXXXXX";
 
-    char *filename = mkstemp(NULL);
+    int fd = mkstemp(temp_template);
 
-    if (filename == NULL) {
-
-        perror("tmpnam() failed");
-
-        return EXIT_FAILURE;
-
-    }
-
-
-
-    // ����ʱ�ļ�
-
-    FILE *file = fopen(filename, "w");
+    FILE *file = fdopen(fd,"w");
 
     if (file == NULL) {
 
         perror("fopen() failed to open the file");
 
-        free(filename);
+        close(fd);
 
         return EXIT_FAILURE;
 
     }
-
-
-
-    // д��һЩ�ı�����ʱ�ļ�
 
     const char *text = "Hello, World!\n";
 
@@ -48,50 +32,35 @@ int main() {
 
         fclose(file);
 
-        free(filename);
+        close(fd);
 
         return EXIT_FAILURE;
 
     }
-
-
-
-    // �ر���ʱ�ļ�
 
     if (fclose(file) != 0) {
 
         perror("fclose() failed to close the file");
 
-        free(filename);
+        close(fd);
 
         return EXIT_FAILURE;
 
     }
 
-
-
-    // ʹ�� unlink() ����ɾ����ʱ�ļ�
-
-    if (unlink(filename) != 0) {
+    if (unlink(temp_template) != 0) {
 
         perror("unlink() failed to delete the file");
 
-        free(filename);
+        close(fd);
 
         return EXIT_FAILURE;
 
     }
 
+    close(fd);
 
-
-    // �ͷ���ʱ�ļ����ڴ�
-
-    free(filename);
-
-
-
-    printf("File %s deleted successfully.\n", filename);
-
+    printf("File %s deleted successfully.\n", temp_template);
 
 
     return EXIT_SUCCESS;

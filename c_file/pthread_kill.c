@@ -4,6 +4,7 @@
 #include <pthread.h>
 #include <errno.h>
 #include <unistd.h>
+#include <signal.h>
 
 void *func1()/*1秒钟之后退出*/
 {

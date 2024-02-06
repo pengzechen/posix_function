@@ -1,26 +1,24 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <utime.h>
-
-int main() {
-    // ÎÄ¼şÃû£¬ÕâÀï¼ÙÉèÄãÓĞÒ»¸öÃûÎª "example.txt" µÄÎÄ¼ş
-    const char *filename = "example.txt";
-
-    // »ñÈ¡µ±Ç°Ê±¼ä£¬²¢½«Æä×ª»»Îª struct timeval ¸ñÊ½
-    time_t current_time = time(NULL);
-    struct tm *local_time = localtime(&current_time);
-    struct timeval tv;
-    tv.tv_sec = mktime(local_time); // ½« struct tm ×ª»»ÎªÃë
-    tv.tv_usec = 0; // Î¢Ãë²¿·ÖÉèÖÃÎª0
-
-    // ÉèÖÃÎÄ¼şµÄ·ÃÎÊºÍĞŞ¸ÄÊ±¼äÎªµ±Ç°Ê±¼ä
-    if (utime(filename, &tv) != 0) {
-        perror("utime() failed");
-        return EXIT_FAILURE;
-    }
-
-    printf("The access and modification times of %s have been updated successfully.\n", filename);
-
-    return EXIT_SUCCESS;
-}
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <time.h>
+#include <utime.h>
+#include <stdio.h>
+
+int main(int argc, char* argv[]) {
+  struct stat st; 
+  stat(argv[1], &st);
+  printf("æœ€è¿‘ä¿®æ”¹æ—¶é—´ %s\n",ctime(&st.st_mtime)); 
+  printf("æœ€è¿‘è®¿é—®æ—¶é—´ %s\n",ctime(&st.st_atime)); 
+
+
+  struct utimbuf utb = {st.st_atime - 24*3600, st.st_mtime - 24*3600};
+
+  utime(argv[1], &utb);
+  stat(argv[1], &st);
+  printf("æ‰§è¡Œ utime å(æ—¶é—´å‡å»ä¸€å¤©)\n");
+  printf("æœ€è¿‘ä¿®æ”¹æ—¶é—´ %s\n",ctime(&st.st_mtime)); 
+  printf("æœ€è¿‘è®¿é—®æ—¶é—´ %s\n",ctime(&st.st_atime)); 
+
+  return 0;
+}
+

@@ -1,33 +1,20 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-int main() {
-    char input[100];
-    char *ptr;
-    int length;
-    long count;
-
-    // ¶ÁÈ¡ÓÃ»§ÊäÈëµÄ×Ö·û´®
-    printf("Enter a string: ");
-    fgets(input, sizeof(input), stdin); // Ê¹ÓÃ fgets ÒÔ±ÜÃâ¶ÁÈ¡»»ĞĞ·û
-
-    // È¥³ı×Ö·û´®Ä©Î²µÄ»»ĞĞ·û
-    input[strcspn(input, "\n")] = '\0';
-
-    // ¼ÆËã×Ö·û´®³¤¶È
-    length = strlen(input);
-
-    // ¼ÆËã×Ö·ûÊı£¨°üÀ¨¿Õ°××Ö·û£©
-    count = 0;
-    for (ptr = input; *ptr; ptr++) {
-        count++;
-    }
-
-    // Ê¹ÓÃ vprintf ´òÓ¡ÓÃ»§ÊäÈëµÄ×Ö·û´®¡¢×Ö·ûÊıºÍ×Ö·û´®³¤¶È
-    vprintf("You entered: %s\n", input);
-    vprintf("The number of characters (including spaces) is: %ld\n", count);
-    vprintf("The length of the string is: %d\n", length);
-
-    // ³ÌĞòÕı³£ÍË³ö
-    return 0;
-}
+#include <stdio.h>
+#include <stdarg.h>
+
+void myPtintf(char *format, ...)
+{
+    va_list args;
+    va_start(args, format);
+    vprintf(format, args);
+    va_end(args);
+}
+int main()
+{
+    myPtintf("è‡ªå®šä¹‰printfå‡½æ•°ï¼šhello world\n");
+    myPtintf("è‡ªå®šä¹‰printfå‡½æ•°ï¼š%s %s\n", "hello world", "Cè¯­è¨€æ•™ç¨‹-çŒ¿è¯´ç¼–ç¨‹");
+    printf("ç³»ç»Ÿprintfå‡½æ•°ï¼šhello world\n");
+    printf("ç³»ç»Ÿprintfå‡½æ•°ï¼š%s %s\n", "hello world", "Cè¯­è¨€æ•™ç¨‹-çŒ¿è¯´ç¼–ç¨‹");
+    return(0);
+}
+
+

@@ -1,28 +1,55 @@
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    // ¶¨ÒåÒ»¸ö°üº¬¶à¸ö¿Õ¸ñ·Ö¸ôµ¥´ÊµÄ×Ö·û´®
-    char str[] = "Hello World This is a demo";
-
-    // Ê¹ÓÃstrtok_r()º¯Êý·Ö¸î×Ö·û´®
-    char *token;
-    char *save_ptr;
-    int word_count = 0;
-
-    // µÚÒ»´Î·Ö¸î
-    token = strtok_r(str, " ", &save_ptr);
-    while (token != NULL) {
-        // ´òÓ¡·Ö¸îºóµÄµ¥´Ê
-        printf("µ¥´Ê %d: %s\n", word_count + 1, token);
-
-        // ¸üÐÂ±£´æÖ¸ÕëµÄÎ»ÖÃ
-        save_ptr = token;
-
-        // ¼ÌÐø·Ö¸îÏÂÒ»¸öµ¥´Ê
-        token = strtok_r(save_ptr, " ", &save_ptr);
-        word_count++;
-    }
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <string.h>
+
+
+int main() {
+
+    // ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¸ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½Ö·ï¿½ï¿½ï¿½
+
+    char str[] = "Hello World This is a demo";
+
+
+
+    // Ê¹ï¿½ï¿½strtok_r()ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½Ö·ï¿½ï¿½ï¿½
+
+    char *token;
+
+    char *save_ptr;
+
+    int word_count = 0;
+
+
+
+    // ï¿½ï¿½Ò»ï¿½Î·Ö¸ï¿½
+
+    token = strtok_r(str, " ", &save_ptr);
+
+    while (token != NULL) {
+
+        // ï¿½ï¿½Ó¡ï¿½Ö¸ï¿½ï¿½Äµï¿½ï¿½ï¿½
+
+        printf("ï¿½ï¿½ï¿½ï¿½ %d: %s\n", word_count + 1, token);
+
+
+
+        // ï¿½ï¿½ï¿½Â±ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Î»ï¿½ï¿½
+
+        save_ptr = token;
+
+
+
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+        token = strtok_r(save_ptr, " ", &save_ptr);
+
+        word_count++;
+
+    }
+
+
+
+    return 0;
+
+}
+

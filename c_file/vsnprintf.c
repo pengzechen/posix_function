@@ -1,14 +1,23 @@
-#include <stdio.h>
-#include <stdarg.h> // 包含vsnprintf()函数
-
-int main() {
-    char buffer[100]; // 创建一个足够大的缓冲区
-
-    // 使用vsnprintf格式化字符串
-    vsnprintf(buffer, sizeof(buffer), "Hello, %s!", "World");
-
-    // 打印结果
-    printf("%s\n", buffer);
-
-    return 0;
-}
+#include <stdio.h>
+#include <stdarg.h>
+
+void my_printf(char *str, ...) {
+    char buffer[100];
+    int len;
+    va_list args;
+
+    va_start(args, str);
+    len = vsnprintf(buffer, sizeof(buffer), str, args);
+    va_end(args);
+
+    printf("Result: %s, length: %d\n", buffer, len);
+}
+
+int main() {
+    my_printf("The answer is %d", 42);
+    my_printf("My name is %s and my age is %d", "Alice", 25);
+
+    return 0;
+}
+
+

@@ -1,14 +1,28 @@
-#include <stdio.h>
-
-int main() {
-    // ¶¨ÒåÒ»¸ö×Ö·û´®
-    char string[] = "Hello, World!";
-
-    // Ê¹ÓÃstrlen()º¯Êý¼ÆËã×Ö·û´®µÄ³¤¶È
-    int length = strlen(string);
-
-    // ´òÓ¡¼ÆËã³öµÄ³¤¶È
-    printf("×Ö·û´®µÄ³¤¶ÈÊÇ£º%d\n", length);
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <string.h>
+
+int main() {
+
+    // ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½
+
+    char string[] = "Hello, World!";
+
+
+
+    // Ê¹ï¿½ï¿½strlen()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½ï¿½
+
+    int length = strlen(string);
+
+
+
+    // ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½ï¿½
+
+    printf("ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½ï¿½ï¿½Ç£ï¿½%d\n", length);
+
+
+
+    return 0;
+
+}
+

@@ -1,15 +1,30 @@
-#include <stdio.h>
-
-int main() {
-    // ¶¨ÒåÁ½¸ö×Ö·û´®±äÁ¿
-    char str1[] = "Hello, ";
-    char str2[] = "World!";
-
-    // Ê¹ÓÃstrcat()º¯Êý½«str2Á¬½Óµ½str1ºóÃæ
-    strcat(str1, str2);
-
-    // ´òÓ¡Á¬½ÓºóµÄ×Ö·û´®
-    printf("%s\n", str1);
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <string.h>
+
+int main() {
+
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+    char str1[] = "Hello, ";
+
+    char str2[] = "World!";
+
+
+
+    // Ê¹ï¿½ï¿½strcat()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½str2ï¿½ï¿½ï¿½Óµï¿½str1ï¿½ï¿½ï¿½ï¿½
+
+    strcat(str1, str2);
+
+
+
+    // ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½Óºï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½
+
+    printf("%s\n", str1);
+
+
+
+    return 0;
+
+}
+

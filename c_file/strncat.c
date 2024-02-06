@@ -1,15 +1,30 @@
-#include <stdio.h>
-
-int main() {
-    // ¶¨ÒåÁ½¸ö×Ö·û´®±äÁ¿
-    char destination[] = "Hello";
-    char source[] = ", World!";
-
-    // Ê¹ÓÃstrncat()º¯Êý½«source×Ö·û´®µÄÇ°5¸ö×Ö·ûÁ¬½Óµ½destination×Ö·û´®µÄÄ©Î²
-    strncat(destination, source, 5);
-
-    // ´òÓ¡Á¬½ÓºóµÄ×Ö·û´®
-    printf("Á¬½ÓºóµÄ×Ö·û´®ÊÇ£º%s\n", destination);
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <string.h>
+
+int main() {
+
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+    char destination[] = "Hello";
+
+    char source[] = ", World!";
+
+
+
+    // Ê¹ï¿½ï¿½strncat()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sourceï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½Ç°5ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Óµï¿½destinationï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½Ä©Î²
+
+    strncat(destination, source, 5);
+
+
+
+    // ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½Óºï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½
+
+    printf("ï¿½ï¿½ï¿½Óºï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Ç£ï¿½%s\n", destination);
+
+
+
+    return 0;
+
+}
+

@@ -1,6 +1,8 @@
 /* vfscanf example */
 #include <stdio.h>
 #include <stdarg.h>
+#include <stdarg.h>
+
  
 void ReadStuff (FILE * stream, const char * format, ...)
 {

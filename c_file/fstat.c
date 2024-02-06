@@ -41,7 +41,7 @@ int main() {
 
     printf("File type: %d\n", file_stat.st_mode);
 
-    printf("Number of hard links: %d\n", file_stat.st_nlink);
+    printf("Number of hard links: %ld\n", file_stat.st_nlink);
 
     printf("Owner ID: %d\n", file_stat.st_uid);
 

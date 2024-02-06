@@ -1,14 +1,30 @@
-#include <stdio.h>
-#include <stdarg.h> // 包含vsnprintf()函数
-
-int main() {
-    char buffer[100]; // 创建一个足够大的缓冲区
-
-    // 使用vsnprintf格式化字符串
-    vsnprintf(buffer, sizeof(buffer), "Hello, %s!", "World");
-
-    // 打印结果
-    printf("%s\n", buffer);
-
-    return 0;
-}
+/* vsprintf example */
+#include <stdio.h>
+#include <stdarg.h>
+ 
+void PrintFError ( const char * format, ... )
+{
+  char buffer[256];
+  va_list args;
+  va_start (args, format);
+  vsprintf (buffer,format, args);
+  perror (buffer);
+  va_end (args);
+}
+ 
+int main ()
+{
+  FILE * pFile;
+  char szFileName[]="myfile.txt";
+ 
+  pFile = fopen (szFileName, "r");
+  if (pFile == NULL)
+    PrintFError ("Error opening '%s'",szFileName);
+  else
+  {
+    // file successfully open
+    fclose (pFile);
+  }
+  return 0;
+}
+

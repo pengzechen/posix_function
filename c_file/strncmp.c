@@ -1,34 +1,68 @@
-#include <stdio.h>
-
-int main() {
-    // ¶¨ÒåÁ½¸ö×Ö·û´®±äÁ¿
-    char string1[] = "Hello";
-    char string2[] = "Hello";
-    char string3[] = "World";
-
-    // Ê¹ÓÃstrncmp()º¯Êý±È½Ïstring1ºÍstring2µÄÇ°5¸ö×Ö·û
-    int result = strncmp(string1, string2, 5);
-
-    // ´òÓ¡±È½Ï½á¹û
-    if (result == 0) {
-        printf("×Ö·û´®ÏàÍ¬¡£\n");
-    } else if (result < 0) {
-        printf("string1 < string2¡£\n");
-    } else {
-        printf("string1 > string2¡£\n");
-    }
-
-    // Ê¹ÓÃstrncmp()º¯Êý±È½Ïstring1ºÍstring3µÄÇ°5¸ö×Ö·û
-    result = strncmp(string1, string3, 5);
-
-    // ´òÓ¡±È½Ï½á¹û
-    if (result == 0) {
-        printf("×Ö·û´®ÏàÍ¬¡£\n");
-    } else if (result < 0) {
-        printf("string1 < string3¡£\n");
-    } else {
-        printf("string1 > string3¡£\n");
-    }
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <string.h>
+
+int main() {
+
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+    char string1[] = "Hello";
+
+    char string2[] = "Hello";
+
+    char string3[] = "World";
+
+
+
+    // Ê¹ï¿½ï¿½strncmp()ï¿½ï¿½ï¿½ï¿½ï¿½È½ï¿½string1ï¿½ï¿½string2ï¿½ï¿½Ç°5ï¿½ï¿½ï¿½Ö·ï¿½
+
+    int result = strncmp(string1, string2, 5);
+
+
+
+    // ï¿½ï¿½Ó¡ï¿½È½Ï½ï¿½ï¿½
+
+    if (result == 0) {
+
+        printf("ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½\n");
+
+    } else if (result < 0) {
+
+        printf("string1 < string2ï¿½ï¿½\n");
+
+    } else {
+
+        printf("string1 > string2ï¿½ï¿½\n");
+
+    }
+
+
+
+    // Ê¹ï¿½ï¿½strncmp()ï¿½ï¿½ï¿½ï¿½ï¿½È½ï¿½string1ï¿½ï¿½string3ï¿½ï¿½Ç°5ï¿½ï¿½ï¿½Ö·ï¿½
+
+    result = strncmp(string1, string3, 5);
+
+
+
+    // ï¿½ï¿½Ó¡ï¿½È½Ï½ï¿½ï¿½
+
+    if (result == 0) {
+
+        printf("ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½\n");
+
+    } else if (result < 0) {
+
+        printf("string1 < string3ï¿½ï¿½\n");
+
+    } else {
+
+        printf("string1 > string3ï¿½ï¿½\n");
+
+    }
+
+
+
+    return 0;
+
+}
+

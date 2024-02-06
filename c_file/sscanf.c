@@ -1,24 +1,48 @@
-#include <stdio.h>
-#include <stdlib.h> // °üº¬stdlib.hÒÔÊ¹ÓÃmalloc()º¯Êı
-
-int main() {
-    char input[100];
-    int num;
-    float floatnum;
-
-    // ÌáÊ¾ÓÃ»§ÊäÈëÒ»¸ö×Ö·û´®
-    printf("ÇëÊäÈëÒ»¸ö°üº¬ÕûÊıºÍ¸¡µãÊıµÄ×Ö·û´®£º");
-    fgets(input, sizeof(input), stdin);
-
-    // È¥³ıÊäÈë×Ö·û´®µÄ»»ĞĞ·û
-    input[strcspn(input, "\n")] = '\0';
-
-    // Ê¹ÓÃsscanf()´Ó×Ö·û´®ÖĞ½âÎö³öÕûÊıºÍ¸¡µãÊı
-    sscanf(input, "%d %f", &num, &floatnum);
-
-    // ´òÓ¡½âÎö³öµÄÕûÊıºÍ¸¡µãÊı
-    printf("ÕûÊıÊÇ£º%d\n", num);
-    printf("¸¡µãÊıÊÇ£º%f\n", floatnum);
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <stdlib.h> // ï¿½ï¿½ï¿½ï¿½stdlib.hï¿½ï¿½Ê¹ï¿½ï¿½malloc()ï¿½ï¿½ï¿½ï¿½
+
+#include <string.h>
+
+int main() {
+
+    char input[100];
+
+    int num;
+
+    float floatnum;
+
+
+
+    // ï¿½ï¿½Ê¾ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½
+
+    printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½");
+
+    fgets(input, sizeof(input), stdin);
+
+
+
+    // È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½Ğ·ï¿½
+
+    input[strcspn(input, "\n")] = '\0';
+
+
+
+    // Ê¹ï¿½ï¿½sscanf()ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Ğ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ï¿½ï¿½ï¿½ï¿½
+
+    sscanf(input, "%d %f", &num, &floatnum);
+
+
+
+    // ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ï¿½ï¿½ï¿½ï¿½
+
+    printf("ï¿½ï¿½ï¿½ï¿½ï¿½Ç£ï¿½%d\n", num);
+
+    printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç£ï¿½%f\n", floatnum);
+
+
+
+    return 0;
+
+}
+

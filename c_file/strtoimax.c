@@ -1,16 +1,34 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-
-int main() {
-    // ¶¨ÒåÒ»¸ö°üº¬ÊýÖµµÄ×Ö·û´®
-    char str[] = "2147483647"; // ÕâÊÇÒ»¸ö INT_MAX µÄÖµ
-
-    // Ê¹ÓÃstrtoimax()º¯Êý½«×Ö·û´®×ª»»Îªintmax_tÀàÐÍµÄ×î´óÕûÊý
-    intmax_t value = strtoimax(str, NULL, 10);
-
-    // ´òÓ¡×ª»»ºóµÄÖµ
-    printf("×ª»»ºóµÄintmax_tÀàÐÍÕûÊýÊÇ£º%jd\n", value);
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <stdlib.h>
+
+#include <stdint.h>
+
+#include <string.h>
+
+#include <inttypes.h>
+
+int main() {
+
+    // ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½
+
+    char str[] = "2147483647"; // ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ INT_MAX ï¿½ï¿½Öµ
+
+
+
+    // Ê¹ï¿½ï¿½strtoimax()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½×ªï¿½ï¿½Îªintmax_tï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+    intmax_t value = strtoimax(str, NULL, 10);
+
+
+
+    // ï¿½ï¿½Ó¡×ªï¿½ï¿½ï¿½ï¿½ï¿½Öµ
+
+    printf("×ªï¿½ï¿½ï¿½ï¿½ï¿½intmax_tï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç£ï¿½%jd\n", value);
+
+
+
+    return 0;
+
+}
+

@@ -1,28 +1,56 @@
-#include <stdio.h>
-#include <locale.h> // °üº¬locale.hÒÔÊ¹ÓÃsetlocale()ºÍstrcoll()
-
-int main() {
-    // ÉèÖÃ³ÌÐòÊ¹ÓÃµÄÇøÓòÉèÖÃ
-    setlocale(LC_ALL, "en_US.UTF-8"); // ÉèÖÃ locale ÎªÃÀ¹úÓ¢Óï
-
-    // ¶¨ÒåÁ½¸ö×Ö·û´®±äÁ¿
-    char str1[] = "Apple";
-    char str2[] = "banana";
-
-    // Ê¹ÓÃstrcoll()º¯Êý±È½Ïstr1ºÍstr2
-    int result = strcoll(str1, str2);
-
-    // ¼ì²é±È½Ï½á¹û
-    if (result < 0) {
-        // str1Ð¡ÓÚstr2
-        printf("str1 < str2\n");
-    } else if (result > 0) {
-        // str1´óÓÚstr2
-        printf("str1 > str2\n");
-    } else {
-        // str1µÈÓÚstr2
-        printf("str1 == str2\n");
-    }
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <locale.h> // ï¿½ï¿½ï¿½ï¿½locale.hï¿½ï¿½Ê¹ï¿½ï¿½setlocale()ï¿½ï¿½strcoll()
+
+#include <string.h>
+
+int main() {
+
+    // ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ï¿½Ê¹ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+    setlocale(LC_ALL, "en_US.UTF-8"); // ï¿½ï¿½ï¿½ï¿½ locale Îªï¿½ï¿½ï¿½ï¿½Ó¢ï¿½ï¿½
+
+
+
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+    char str1[] = "Apple";
+
+    char str2[] = "banana";
+
+
+
+    // Ê¹ï¿½ï¿½strcoll()ï¿½ï¿½ï¿½ï¿½ï¿½È½ï¿½str1ï¿½ï¿½str2
+
+    int result = strcoll(str1, str2);
+
+
+
+    // ï¿½ï¿½ï¿½È½Ï½ï¿½ï¿½
+
+    if (result < 0) {
+
+        // str1Ð¡ï¿½ï¿½str2
+
+        printf("str1 < str2\n");
+
+    } else if (result > 0) {
+
+        // str1ï¿½ï¿½ï¿½ï¿½str2
+
+        printf("str1 > str2\n");
+
+    } else {
+
+        // str1ï¿½ï¿½ï¿½ï¿½str2
+
+        printf("str1 == str2\n");
+
+    }
+
+
+
+    return 0;
+
+}
+
