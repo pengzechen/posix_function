@@ -1,16 +1,21 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-
-int main() {
-    // ¶¨ÒåÒ»¸ö°üº¬ÊýÖµµÄ×Ö·û´®
-    char str[] = "12345";
-
-    // Ê¹ÓÃstrtol()º¯Êý½«×Ö·û´®×ª»»Îª³¤ÕûÐÍÊý
-    long value = strtol(str, NULL, 10);
-
-    // ´òÓ¡×ª»»ºóµÄÖµ
-    printf("×ª»»ºóµÄ³¤ÕûÐÍÊýÊÇ£º%ld\n", value);
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <stdlib.h>
+
+#include <stdint.h>
+
+
+
+int main() {
+
+
+    char str[] = "12345";
+
+    long value = strtol(str, NULL, 10);
+
+    printf("×ªï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç£ï¿½%ld\n", value);
+
+    return 0;
+
+}
+

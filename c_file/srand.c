@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include <stdlib.h> // ����stdlib.h��ʹ��srand()����
+#include <stdlib.h> 
 
 #include <time.h>
 

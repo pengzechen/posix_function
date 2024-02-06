@@ -1,16 +1,21 @@
-#include <stdio.h>
-#include <ctype.h> // °üº¬ctype.hÒÔÊ¹ÓÃislower()º¯Êý
-
-int main() {
-    // ²âÊÔ×Ö·û
-    char ch = 'a';
-
-    // Ê¹ÓÃislower()¼ì²é×Ö·ûÊÇ·ñÊÇÓ¢ÎÄÐ¡Ð´×ÖÄ¸
-    if (islower(ch)) {
-        printf("×Ö·û %c ÊÇÓ¢ÎÄÐ¡Ð´×ÖÄ¸¡£\n", ch);
-    } else {
-        printf("×Ö·û %c ²»ÊÇÓ¢ÎÄÐ¡Ð´×ÖÄ¸¡£\n", ch);
-    }
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <ctype.h> 
+
+int main() {
+
+    char ch = 'a';
+
+    if (islower(ch)) {
+
+        printf("ï¿½Ö·ï¿½ %c ï¿½ï¿½Ó¢ï¿½ï¿½Ð¡Ð´ï¿½ï¿½Ä¸ï¿½ï¿½\n", ch);
+
+    } else {
+
+        printf("ï¿½Ö·ï¿½ %c ï¿½ï¿½ï¿½ï¿½Ó¢ï¿½ï¿½Ð¡Ð´ï¿½ï¿½Ä¸ï¿½ï¿½\n", ch);
+
+    }
+
+    return 0;
+}
+

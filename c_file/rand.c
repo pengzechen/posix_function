@@ -1,12 +1,13 @@
-#include <stdio.h>
-#include <stdlib.h> // °üº¬stdlib.hÒÔÊ¹ÓÃrand()º¯Êı
-
-int main() {
-    // Éú³ÉÒ»¸öÎ±Ëæ»úÕûÊı
-    int randomNumber = rand();
-
-    // ´òÓ¡Éú³ÉµÄËæ»úÊı
-    printf("Éú³ÉµÄËæ»úÊıÊÇ£º%d\n", randomNumber);
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <stdlib.h> 
+
+int main() {
+
+    int randomNumber = rand();
+
+    printf("ï¿½ï¿½ï¿½Éµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç£ï¿½%d\n", randomNumber);
+
+    return 0;
+}
+

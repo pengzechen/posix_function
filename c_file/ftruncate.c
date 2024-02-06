@@ -61,7 +61,7 @@ int main() {
     printf("Original file size: %ld bytes\n", new_size);
 
 
-    new_size = 10; // �ض��ļ���10�ֽ�
+    new_size = 10;
 
     if (ftruncate(fd, new_size) == -1) {
 

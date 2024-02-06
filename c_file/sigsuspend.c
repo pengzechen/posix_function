@@ -12,9 +12,6 @@ int main() {
     sigset_t sigset;
 
 
-
-    // ����źż�
-
     if (sigemptyset(&sigset) == -1) {
 
         perror("sigemptyset() failed");
@@ -24,9 +21,6 @@ int main() {
     }
 
 
-
-    // �� SIGINT �źż����źż�
-
     if (sigaddset(&sigset, SIGINT) == -1) {
 
         perror("sigaddset() failed");
@@ -34,10 +28,6 @@ int main() {
         return EXIT_FAILURE;
 
     }
-
-
-
-    // �����źż�
 
     if (sigprocmask(SIG_SETMASK, &sigset, NULL) == -1) {
 
@@ -48,12 +38,8 @@ int main() {
     }
 
 
-
     printf("Program is suspended until SIGINT arrives.\n");
 
-
-
-    // �ȴ� SIGINT �ź�
 
     if (sigsuspend(&sigset) == -1) {
 
@@ -63,9 +49,6 @@ int main() {
 
     }
 
-
-
-    // �źŴ����󷵻�
 
     printf("SIGINT received, resuming execution.\n");
 

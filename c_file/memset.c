@@ -1,15 +1,15 @@
-#include <stdio.h>
-#include <string.h> // 包含string.h以使用memset()函数
-
-int main() {
-    // 定义一个字符数组
-    char buffer[20];
-
-    // 使用memset()将整个内存块设置为0（即'\0'）
-    memset(buffer, 0, sizeof(buffer));
-
-    // 打印设置后的内存块内容
-    printf("设置后的内存块内容是：%s\n", buffer);
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <string.h> 
+
+int main() {
+
+    char buffer[20];
+
+    memset(buffer, 0, sizeof(buffer));
+
+    printf("锟斤拷锟矫猴拷锟斤拷诖锟斤拷锟斤拷锟斤拷锟角ｏ拷%s\n", buffer);
+
+    return 0;
+}
+

@@ -15,8 +15,7 @@ void *print_numbers(void *arg) {
 
         printf("Number: %d\n", *num);
 
-        sleep(1); // ����1��
-
+        sleep(1);
     }
 
     return NULL;
@@ -30,7 +29,7 @@ void *print_letters(void *arg) {
 
         printf("Letter: %c\n", 'A' + i);
 
-        sleep(1); // ����1��
+        sleep(1); 
 
     }
 

@@ -44,7 +44,7 @@ int main() {
 
     if (result != 0) {
 
-        if (errno != EEXIST) { // ���Ŀ¼�Ѿ����ڣ�����Ϊ����
+        if (errno != EEXIST) { 
 
             perror("mkdir() failed to create directory");
 

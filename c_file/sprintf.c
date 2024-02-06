@@ -1,14 +1,17 @@
-#include <stdio.h>
-
-int main() {
-    // 分配一个足够大的缓冲区
-    char buffer[30];
-
-    // 使用sprintf()向缓冲区中写入格式化的字符串
-    sprintf(buffer, "Hello, %s!", "World");
-
-    // 打印缓冲区中的内容
-    printf("缓冲区中的内容是：%s\n", buffer);
-
-    return 0;
-}
+#include <stdio.h>
+
+
+
+int main() {
+
+    char buffer[30];
+
+    sprintf(buffer, "Hello, %s!", "World");
+
+
+    printf("锟斤拷锟斤拷锟斤拷锟叫碉拷锟斤拷锟斤拷锟角ｏ拷%s\n", buffer);
+
+    return 0;
+
+}
+

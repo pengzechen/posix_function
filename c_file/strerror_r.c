@@ -1,29 +1,32 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <errno.h> // °üº¬errno.hÒÔÊ¹ÓÃerrno
-
-int main() {
-    // ¼ÙÉèÎÒÃÇÓĞÒ»¸ö´íÎó´úÂë
-    int error_code = EIO; // Í¨³£±íÊ¾ÊäÈë/Êä³ö´íÎó
-
-    // ¶¨ÒåÒ»¸ö»º³åÇøÀ´´æ´¢´íÎóÏûÏ¢
-    char error_buffer[100];
-
-    // Ê¹ÓÃstrerror_r()º¯Êı»ñÈ¡Óëerror_code¶ÔÓ¦µÄ´íÎóÏûÏ¢£¬²¢½«Æä¸´ÖÆµ½error_bufferÖĞ
-    int result = strerror_r(error_code, error_buffer, sizeof(error_buffer) - 1);
-
-    // ¼ì²éstrerror_r()µÄ·µ»ØÖµ
-    if (result == 0) {
-        // ³É¹¦»ñÈ¡ÁË´íÎóÏûÏ¢
-        printf("´íÎó´úÂë %d: %s\n", error_code, error_buffer);
-    } else {
-        // ÎŞ·¨»ñÈ¡´íÎóÏûÏ¢£¬¿ÉÄÜÊÇÒòÎª»º³åÇøÌ«Ğ¡
-        printf("ÎŞ·¨»ñÈ¡´íÎóÏûÏ¢£º%s\n", error_buffer);
-    }
-
-    // ÇåÀíÄÚ´æ£¨Èç¹ûĞèÒª£©
-    // ÔÚÕâ¸öÀı×ÓÖĞ£¬error_bufferÊÇÓÉstrerror_r()Ö±½ÓÌî³äµÄ£¬ËùÒÔ²»ĞèÒª¶îÍâÇåÀí¡£
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <stdlib.h>
+
+#include <string.h>
+
+#include <errno.h> 
+
+int main() {
+
+
+    int error_code = EIO; 
+
+    char error_buffer[100];
+
+    int result = strerror_r(error_code, error_buffer, sizeof(error_buffer) - 1);
+
+
+    if (result == 0) {
+
+        printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ %d: %s\n", error_code, error_buffer);
+
+    } else {
+
+        printf("ï¿½Ş·ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½%s\n", error_buffer);
+
+    }
+
+    return 0;
+
+}
+

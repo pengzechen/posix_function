@@ -1,16 +1,20 @@
-#include <stdio.h>
-#include <ctype.h> // °üº¬ctype.hÒÔÊ¹ÓÃisblank()º¯Êý
-
-int main() {
-    // ²âÊÔ×Ö·û
-    char ch = ' ';
-
-    // Ê¹ÓÃisblank()¼ì²é×Ö·ûÊÇ·ñÊÇ¿Õ°××Ö·û
-    if (isblank(ch)) {
-        printf("×Ö·û %c ÊÇ¿Õ°××Ö·û¡£\n", ch);
-    } else {
-        printf("×Ö·û %c ²»ÊÇ¿Õ°××Ö·û¡£\n", ch);
-    }
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <ctype.h> 
+
+int main() {
+    char ch = ' ';
+
+    if (isblank(ch)) {
+
+        printf("ï¿½Ö·ï¿½ %c ï¿½Ç¿Õ°ï¿½ï¿½Ö·ï¿½ï¿½ï¿½\n", ch);
+
+    } else {
+
+        printf("ï¿½Ö·ï¿½ %c ï¿½ï¿½ï¿½Ç¿Õ°ï¿½ï¿½Ö·ï¿½ï¿½ï¿½\n", ch);
+
+    }
+
+    return 0;
+}
+

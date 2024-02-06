@@ -5,13 +5,11 @@
 #include<errno.h>
 
 
-volatile sig_atomic_t stop; // ���ڴ洢�źŴ��������е�״̬
-
+volatile sig_atomic_t stop; 
 
 void handle_sigint(int sig) {
 
-    stop = 1; // ����ֹͣ��־
-
+    stop = 1; 
 }
 
 
@@ -20,14 +18,11 @@ int main() {
 
     signal(SIGINT, handle_sigint);
 
-
-
     printf("Press Ctrl+C to stop the program.\n");
 
     while (!stop) {
 
-        pause(); // ��ִͣ�У��ȴ��ź�
-
+        pause(); 
     }
 
     printf("Program stopped by user.\n");

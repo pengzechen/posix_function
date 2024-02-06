@@ -1,15 +1,17 @@
-#include <stdio.h>
-#include <ctype.h> // °üº¬toupper()º¯Êý
-
-int main() {
-    // ¶¨ÒåÒ»¸ö×Ö·û
-    char ch = 'a';
-
-    // Ê¹ÓÃtoupper()º¯Êý½«×Ö·û×ª»»Îª´óÐ´×ÖÄ¸
-    char upper_case = toupper(ch);
-
-    // ´òÓ¡×ª»»ºóµÄ´óÐ´×ÖÄ¸
-    printf("×ª»»ºóµÄ´óÐ´×ÖÄ¸ÊÇ£º%c\n", upper_case);
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <ctype.h> 
+
+
+int main() {
+
+    char ch = 'a';
+
+    char upper_case = toupper(ch);
+
+    printf("×ªï¿½ï¿½ï¿½ï¿½Ä´ï¿½Ð´ï¿½ï¿½Ä¸ï¿½Ç£ï¿½%c\n", upper_case);
+
+    return 0;
+
+}
+

@@ -17,9 +17,6 @@ int main() {
     ssize_t bytes_written;
 
 
-
-    // ���ļ�������ļ��������򴴽���
-
     int fd = open("example.txt", O_WRONLY | O_CREAT | O_EXCL, 0644);
 
     if (fd == -1) {
@@ -29,10 +26,6 @@ int main() {
         return EXIT_FAILURE;
 
     }
-
-
-
-    // д�����ݵ��ļ�
 
     bytes_written = write(fd, text, strlen(text));
 
@@ -46,10 +39,6 @@ int main() {
 
     }
 
-
-
-    // ȷ��д����ֽ�����Ԥ�����
-
     if (bytes_written != strlen(text)) {
 
         fprintf(stderr, "Write failed: only %ld bytes were written\n", bytes_written);
@@ -61,14 +50,8 @@ int main() {
     }
 
 
-
-    // �ر��ļ�������
-
     close(fd);
 
-
-
-    // ���������˳�
 
     return EXIT_SUCCESS;
 

@@ -17,9 +17,6 @@ int main() {
     int fd;
 
 
-
-    // �����ļ�
-
     fd = open("example.txt", O_WRONLY | O_CREAT | O_EXCL, 0644);
 
     if (fd == -1) {
@@ -29,10 +26,6 @@ int main() {
         return EXIT_FAILURE;
 
     }
-
-
-
-    // ����׼����ض������Ǵ������ļ�������
 
     if (dup2(fd, STDOUT_FILENO) == -1) {
 
@@ -44,23 +37,9 @@ int main() {
 
     }
 
-
-
-    // ���ڱ�׼���ָ�����ļ������� fd
-
-    // д�����ݵ��µı�׼��������ļ������� fd ָ����ļ���
-
     write(STDOUT_FILENO, text, strlen(text));
 
-
-
-    // �ر��ļ�������
-
     close(fd);
-
-
-
-    // ���������˳�
 
     return EXIT_SUCCESS;
 

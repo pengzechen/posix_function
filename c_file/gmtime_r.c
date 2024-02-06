@@ -1,26 +1,20 @@
 #include <stdio.h>
 
-#include <time.h> // ����time.h��ʹ��gmtime_r()����
-
-
+#include <time.h> 
 
 int main() {
 
-    const time_t now = time(NULL); // ��ȡ��ǰʱ��
-
+    const time_t now = time(NULL); 
     struct tm * gmt;
-
 
     gmt = gmtime_r(&now, gmt);
 
     if (gmt == NULL) {
 
-        perror("gmtime_r() ʧ��");
+        perror("gmtime_r() failed");
 
         return 1;
-
     }
-
 
     printf("%d-%d-%d %d:%d:%d\n",
 

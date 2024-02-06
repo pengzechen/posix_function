@@ -1,15 +1,16 @@
-#include <stdio.h>
-#include <ctype.h> // °üº¬tolower()º¯Êý
-
-int main() {
-    // ¶¨ÒåÒ»¸ö×Ö·û
-    char ch = 'A';
-
-    // Ê¹ÓÃtolower()º¯Êý½«×Ö·û×ª»»ÎªÐ¡Ð´×ÖÄ¸
-    char lower_case = tolower(ch);
-
-    // ´òÓ¡×ª»»ºóµÄÐ¡Ð´×ÖÄ¸
-    printf("×ª»»ºóµÄÐ¡Ð´×ÖÄ¸ÊÇ£º%c\n", lower_case);
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <ctype.h> 
+
+int main() {
+
+    char ch = 'A';
+
+    char lower_case = tolower(ch);
+
+    printf("×ªï¿½ï¿½ï¿½ï¿½ï¿½Ð¡Ð´ï¿½ï¿½Ä¸ï¿½Ç£ï¿½%c\n", lower_case);
+
+    return 0;
+
+}
+

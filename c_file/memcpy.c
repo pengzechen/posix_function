@@ -1,18 +1,19 @@
-#include <stdio.h>
-#include <string.h> // °üº¬string.hÒÔÊ¹ÓÃmemcpy()º¯Êı
-
-int main() {
-    // ¶¨ÒåÒ»¸ö×Ö·ûÊı×é×÷ÎªÔ´
-    char src[] = "Hello, World!";
-
-    // ¶¨ÒåÒ»¸ö×Ö·ûÊı×é×÷ÎªÄ¿µÄµØ
-    char dest[20]; // È·±£Õâ¸öÊı×é×ã¹»´óÒÔÈİÄÉ¸´ÖÆµÄÄÚÈİ
-
-    // Ê¹ÓÃmemcpy()¸´ÖÆ×Ö·û´®
-    memcpy(dest, src, sizeof(src));
-
-    // ´òÓ¡¸´ÖÆºóµÄÄ¿µÄµØ×Ö·û´®
-    printf("¸´ÖÆºóµÄ×Ö·û´®ÊÇ£º%s\n", dest);
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <string.h> 
+
+int main() {
+
+    char src[] = "Hello, World!";
+
+
+    char dest[20]; 
+
+    memcpy(dest, src, sizeof(src));
+
+    printf("ï¿½ï¿½ï¿½Æºï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Ç£ï¿½%s\n", dest);
+
+    return 0;
+
+}
+

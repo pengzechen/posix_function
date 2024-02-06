@@ -23,9 +23,6 @@ int main() {
     char buffer[1024];
 
 
-
-    // ���ļ�
-
     fd = open(filename, O_RDONLY);
 
     if (fd == -1) {
@@ -36,9 +33,6 @@ int main() {
 
     }
 
-
-
-    // �����ļ�������Ϊ������ģʽ
 
     flags = fcntl(fd, F_GETFL, 0);
 
@@ -65,30 +59,19 @@ int main() {
     }
 
 
-
-    // ѭ����ȡ����ֱ���ļ�����
-
     // while (1) {
-
-        // ���Զ�ȡ����
 
         bytesRead = read(fd, buffer, sizeof(buffer) - 1);
 
         if (bytesRead == -1) {
 
-            // ����Ƿ�����Ϊ������ģʽ�����µ�EAGAIN����
-
             if (errno != EAGAIN) {
 
                 perror("Error reading file");
 
-                // break;
-
             }
 
         } else {
-
-            // �Ƴ��ַ���ĩβ�Ļ��з�������еĻ���
 
             buffer[bytesRead] = '\0';
 
@@ -96,23 +79,12 @@ int main() {
 
         }
 
-
-
-        // �����������˯�߻������ȴ����������ⷱæ�ȴ�
-
         // usleep(10000); // �ȴ�10000΢�루10���룩
 
     // }
 
 
-
-    // �ر��ļ�������
-
     close(fd);
-
-
-
-    // ���������˳�
 
     return EXIT_SUCCESS;
 

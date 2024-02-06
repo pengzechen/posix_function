@@ -1,25 +1,27 @@
-#include <stdio.h>
-#include <stdlib.h> // °üº¬stdlib.hÒÔÊ¹ÓÃfree()º¯Êı
-
-int main() {
-    // ·ÖÅäÒ»Ğ©ÄÚ´æ
-    int *ptr = (int*)malloc(sizeof(int));
-
-    if (ptr == NULL) {
-        fprintf(stderr, "ÄÚ´æ·ÖÅäÊ§°Ü\n");
-        return 1;
-    }
-
-    // Ê¹ÓÃ·ÖÅäµÄÄÚ´æ
-    *ptr = 42;
-    printf("·ÖÅäµÄÄÚ´æÖĞµÄÖµ£º%d\n", *ptr);
-
-    // ÊÍ·ÅÄÚ´æ
-    free(ptr);
-
-    // ÔÙ´Î³¢ÊÔ·ÃÎÊÄÚ´æÒÔÈ·±£ËüÒÑ±»ÊÍ·Å
-    // Õâ½«´òÓ¡³öÒ»¸ö´íÎóÏûÏ¢£¬ÒòÎªÄÚ´æÒÑ±»ÊÍ·Å
-    // printf("³¢ÊÔ·ÃÎÊÒÑÊÍ·ÅµÄÄÚ´æ£º%d\n", *ptr);
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <stdlib.h> 
+
+
+int main() {
+
+    int *ptr = (int*)malloc(sizeof(int));
+
+    if (ptr == NULL) {
+
+        fprintf(stderr, "ï¿½Ú´ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½\n");
+
+        return 1;
+
+    }
+
+    *ptr = 42;
+
+    printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½Ğµï¿½Öµï¿½ï¿½%d\n", *ptr);
+
+    free(ptr);
+
+    return 0;
+
+}
+

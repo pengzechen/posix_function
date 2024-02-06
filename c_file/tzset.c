@@ -2,7 +2,7 @@
 
 #include <time.h>
 
-#include <unistd.h> // ����setuid()����
+#include <unistd.h>
 
 #include <stdlib.h>
 

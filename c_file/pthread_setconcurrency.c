@@ -4,10 +4,6 @@
 
 #include <unistd.h>
 
-
-
-// �̺߳���
-
 void *thread_function(void *arg) {
 
     printf("Thread started\n");

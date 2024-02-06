@@ -1,19 +1,21 @@
-#include <stdio.h>
-#include <time.h> // 包含time.h以使用asctime()函数
-
-int main() {
-    time_t now;
-    struct tm *local;
-
-    // 获取当前时间
-    time(&now);
-    // 将时间转换为tm结构
-    local = localtime(&now);
-
-    // 使用asctime()将tm结构转换为字符串
-    char *time_str = asctime(local);
-
-    printf("当前时间（字符串形式）： %s\n", time_str);
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <time.h>
+
+int main() {
+
+    time_t now;
+
+    struct tm *local;
+
+    time(&now);
+
+    local = localtime(&now);
+
+    char *time_str = asctime(local);
+
+    printf("锟斤拷前时锟戒（锟街凤拷锟斤拷锟斤拷式锟斤拷锟斤拷 %s\n", time_str);
+
+    return 0;
+}
+

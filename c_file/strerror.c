@@ -1,24 +1,30 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-int main() {
-    // ¼ÙÉèÎÒÃÇÓĞÒ»¸ö´íÎó´úÂë
-    int error_code = 123;
-
-    // Ê¹ÓÃstrerror()º¯Êı»ñÈ¡Óëerror_code¶ÔÓ¦µÄ´íÎóÏûÏ¢
-    char *error_message = strerror(error_code);
-
-    // Èç¹ûerror_messageÎªNULL£¬ËµÃ÷strerror()ÎŞ·¨ÕÒµ½Óëerror_code¶ÔÓ¦µÄ´íÎóÏûÏ¢
-    if (error_message == NULL) {
-        printf("ÎŞ·¨ÕÒµ½´íÎóÏûÏ¢¡£\n");
-    } else {
-        // ´òÓ¡´íÎóÏûÏ¢
-        printf("´íÎó´úÂë %d: %s\n", error_code, error_message);
-    }
-
-    // ÇåÀíÄÚ´æ£¨Èç¹ûĞèÒª£©
-    free(error_message);
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <stdlib.h>
+
+#include <string.h>
+
+
+
+int main() {
+
+    int error_code = 123;
+
+    char *error_message = strerror(error_code);
+
+    if (error_message == NULL) {
+
+        printf("ï¿½Ş·ï¿½ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½\n");
+
+    } else {
+
+        printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ %d: %s\n", error_code, error_message);
+
+    }
+
+    free(error_message);
+
+    return 0;
+
+}
+

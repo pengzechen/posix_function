@@ -1,32 +1,47 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <locale.h>
-
-int main() {
-    // ¶¨ÒåÁ½¸ö×Ö·û´®
-    char str1[] = "z";
-    char str2[] = "a";
-
-    // »ñÈ¡µ±Ç°µÄ±¾µØ»·¾³
-    setlocale(LC_ALL, "");
-
-    // Ê¹ÓÃstrxfrm()º¯Êý¶Ô×Ö·û´®½øÐÐ×ª»»
-    size_t len1 = strlen(str1);
-    size_t len2 = strlen(str2);
-    char *transformed1 = alloca(len1 + 1);
-    char *transformed2 = alloca(len2 + 1);
-
-    strxfrm(transformed1, str1, len1);
-    strxfrm(transformed2, str2, len2);
-
-    // ´òÓ¡×ª»»ºóµÄ×Ö·û´®
-    printf("×ª»»ºóµÄ×Ö·û´®1£º%s\n", transformed1);
-    printf("×ª»»ºóµÄ×Ö·û´®2£º%s\n", transformed2);
-
-    // ±È½ÏÁ½¸ö×ª»»ºóµÄ×Ö·û´®
-    int result = strcmp(transformed1, transformed2);
-    printf("±È½Ï½á¹û£º%d\n", result);
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <stdlib.h>
+
+#include <string.h>
+
+#include <locale.h>
+
+
+
+int main() {
+
+    char str1[] = "z";
+
+    char str2[] = "a";
+
+    setlocale(LC_ALL, "");
+
+    size_t len1 = strlen(str1);
+
+    size_t len2 = strlen(str2);
+
+    char *transformed1 = alloca(len1 + 1);
+
+    char *transformed2 = alloca(len2 + 1);
+
+
+
+    strxfrm(transformed1, str1, len1);
+
+    strxfrm(transformed2, str2, len2);
+
+    printf("×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½1ï¿½ï¿½%s\n", transformed1);
+
+    printf("×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½2ï¿½ï¿½%s\n", transformed2);
+
+
+    int result = strcmp(transformed1, transformed2);
+
+    printf("ï¿½È½Ï½ï¿½ï¿½ï¿½ï¿½%d\n", result);
+
+
+
+    return 0;
+
+}
+

@@ -15,10 +15,6 @@ int main() {
 
     struct timespec timeout;
 
-
-
-    // ����źż�
-
     if (sigemptyset(&sigset) == -1) {
 
         perror("sigemptyset() failed");
@@ -27,9 +23,6 @@ int main() {
 
     }
 
-
-
-    // �� SIGINT �źż����źż�
 
     if (sigaddset(&sigset, SIGINT) == -1) {
 
@@ -41,8 +34,6 @@ int main() {
 
 
 
-    // ���� SIGINT �ź�
-
     if (sigprocmask(SIG_BLOCK, &sigset, &old_sigset) == -1) {
 
         perror("sigprocmask(SIG_BLOCK) failed");
@@ -51,9 +42,6 @@ int main() {
 
     }
 
-
-
-    // �ȴ��źţ�����������һ��1��ĳ�ʱ
 
     timeout.tv_sec = 1;
 
@@ -68,9 +56,6 @@ int main() {
     }
 
 
-
-    // ������� SIGINT �ź�
-
     if (sigprocmask(SIG_UNBLOCK, &sigset, NULL) == -1) {
 
         perror("sigprocmask(SIG_UNBLOCK) failed");
@@ -79,9 +64,6 @@ int main() {
 
     }
 
-
-
-    // ��ӡ������κ���ź�״̬
 
     if (sigpending(&sigset) == -1) {
 

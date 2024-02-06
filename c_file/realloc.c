@@ -1,43 +1,63 @@
-#include <stdio.h>
-#include <stdlib.h> // °üº¬stdlib.hÒÔÊ¹ÓÃrealloc()º¯Êı
-
-int main() {
-    // ³õÊ¼»¯Ò»¸ö¶¯Ì¬·ÖÅäµÄÄÚ´æ¿é£¬´óĞ¡Îª10¸öintÀàĞÍ
-    int *ptr = (int*)malloc(10 * sizeof(int));
-    if (ptr == NULL) {
-        fprintf(stderr, "ÄÚ´æ·ÖÅäÊ§°Ü\n");
-        return 1;
-    }
-
-    // ³õÊ¼»¯ÄÚ´æ¿éÖĞµÄÖµ
-    for (int i = 0; i < 10; i++) {
-        ptr[i] = i;
-    }
-
-    // ´òÓ¡Ô­Ê¼ÄÚ´æ¿éµÄÄÚÈİ
-    printf("Ô­Ê¼ÄÚ´æ¿éÄÚÈİ£º");
-    for (int i = 0; i < 10; i++) {
-        printf("%d ", ptr[i]);
-    }
-    printf("\n");
-
-    // ÖØĞÂ·ÖÅäÄÚ´æ¿éµÄ´óĞ¡£¬Ê¹Æä±äÎªÔ­À´µÄÁ½±¶
-    ptr = (int*)realloc(ptr, 20 * sizeof(int));
-    if (ptr == NULL) {
-        fprintf(stderr, "ÄÚ´æÖØĞÂ·ÖÅäÊ§°Ü\n");
-        free(ptr); // ÊÍ·ÅÖ®Ç°µÄÄÚ´æ¿é
-        return 1;
-    }
-
-    // ´òÓ¡ÖØĞÂ·ÖÅäºóµÄÄÚ´æ¿éÄÚÈİ
-    printf("ÖØĞÂ·ÖÅäºóµÄÄÚ´æ¿éÄÚÈİ£º");
-    for (int i = 0; i < 20; i++) {
-        printf("%d ", ptr[i]);
-    }
-    printf("\n");
-
-    // ÊÍ·Å¶¯Ì¬·ÖÅäµÄÄÚ´æ¿é
-    free(ptr);
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <stdlib.h> 
+
+int main() {
+
+    int *ptr = (int*)malloc(10 * sizeof(int));
+
+    if (ptr == NULL) {
+
+        fprintf(stderr, "ï¿½Ú´ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½\n");
+
+        return 1;
+
+    }
+
+
+    for (int i = 0; i < 10; i++) {
+
+        ptr[i] = i;
+
+    }
+
+
+    printf("Ô­Ê¼ï¿½Ú´ï¿½ï¿½ï¿½ï¿½ï¿½İ£ï¿½");
+
+    for (int i = 0; i < 10; i++) {
+
+        printf("%d ", ptr[i]);
+
+    }
+
+    printf("\n");
+
+
+    ptr = (int*)realloc(ptr, 20 * sizeof(int));
+
+    if (ptr == NULL) {
+
+        fprintf(stderr, "ï¿½Ú´ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½Ê§ï¿½ï¿½\n");
+
+        free(ptr); 
+
+        return 1;
+
+    }
+
+    printf("ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½ï¿½ï¿½ï¿½İ£ï¿½");
+
+    for (int i = 0; i < 20; i++) {
+
+        printf("%d ", ptr[i]);
+
+    }
+
+    printf("\n");
+
+    free(ptr);
+
+    return 0;
+
+}
+

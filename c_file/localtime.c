@@ -1,17 +1,20 @@
-#include <stdio.h>
-#include <time.h> // 包含time.h以使用localtime()函数
-
-int main() {
-    // 获取当前时间的time_t值
-    time_t now;
-    now = time(NULL);
-
-    // 将time_t值转换为本地时间的struct tm指针
-    struct tm *local_time;
-    local_time = localtime(&now);
-
-    // 打印本地时间
-    printf("本地时间是：%s\n", asctime(local_time));
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <time.h> 
+
+int main() {
+
+    time_t now;
+
+    now = time(NULL);
+
+    struct tm *local_time;
+
+    local_time = localtime(&now);
+
+    printf("锟斤拷锟斤拷时锟斤拷锟角ｏ拷%s\n", asctime(local_time));
+
+    return 0;
+
+}
+

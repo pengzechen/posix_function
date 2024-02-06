@@ -1,14 +1,17 @@
-#include <stdio.h>
-#include <stdlib.h> // °üº¬stdlib.hÒÔÊ¹ÓÃatoi()º¯Êı
-
-int main() {
-    char str[] = "1234"; // ¶¨ÒåÒ»¸ö°üº¬Êı×ÖµÄ×Ö·û´®
-    int value;
-
-    // Ê¹ÓÃatoi()º¯Êı½«×Ö·û´®×ª»»ÎªÕûÊı
-    value = atoi(str);
-
-    printf("×ª»»ºóµÄÕûÊı£º %d\n", value);
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <stdlib.h> 
+
+int main() {
+
+    char str[] = "1234"; 
+    int value;
+
+    value = atoi(str);
+
+    printf("×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ %d\n", value);
+
+    return 0;
+
+}
+

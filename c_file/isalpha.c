@@ -1,16 +1,22 @@
-#include <stdio.h>
-#include <ctype.h> // °üº¬ctype.hÒÔÊ¹ÓÃisalpha()º¯Êý
-
-int main() {
-    // ²âÊÔ×Ö·û
-    char ch = 'A';
-
-    // Ê¹ÓÃisalpha()¼ì²é×Ö·ûÊÇ·ñÊÇ×ÖÄ¸
-    if (isalpha(ch)) {
-        printf("×Ö·û %c ÊÇ×ÖÄ¸¡£\n", ch);
-    } else {
-        printf("×Ö·û %c ²»ÊÇ×ÖÄ¸¡£\n", ch);
-    }
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <ctype.h> 
+
+int main() {
+
+    char ch = 'A';
+
+    if (isalpha(ch)) {
+
+        printf("ï¿½Ö·ï¿½ %c ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½\n", ch);
+
+    } else {
+
+        printf("ï¿½Ö·ï¿½ %c ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½\n", ch);
+
+    }
+
+    return 0;
+
+}
+

@@ -1,16 +1,21 @@
-#include <stdio.h>
-#include <ctype.h> // 包含ctype.h以使用isdigit()函数
-
-int main() {
-    // 测试字符
-    char ch = '5';
-
-    // 使用isdigit()检查字符是否是十进制数字
-    if (isdigit(ch)) {
-        printf("字符 %c 是十进制数字。\n", ch);
-    } else {
-        printf("字符 %c 不是十进制数字。\n", ch);
-    }
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <ctype.h> 
+
+int main() {
+
+    char ch = '5';
+
+    if (isdigit(ch)) {
+
+        printf("锟街凤拷 %c 锟斤拷十锟斤拷锟斤拷锟斤拷锟街★拷\n", ch);
+
+    } else {
+
+        printf("锟街凤拷 %c 锟斤拷锟斤拷十锟斤拷锟斤拷锟斤拷锟街★拷\n", ch);
+
+    }
+
+    return 0;
+}
+

@@ -24,9 +24,6 @@ int main() {
     int sig;
 
 
-
-    // ע�� SIGINT �źŵĴ�������
-
     if (signal(SIGINT, handle_sigint) == SIG_ERR) {
 
         perror("signal() registration failed");
@@ -34,10 +31,6 @@ int main() {
         return EXIT_FAILURE;
 
     }
-
-
-
-    // ����źż�
 
     if (sigemptyset(&sigset) == -1) {
 
@@ -48,9 +41,6 @@ int main() {
     }
 
 
-
-    // �� SIGINT �źż����źż�
-
     if (sigaddset(&sigset, SIGINT) == -1) {
 
         perror("sigaddset() failed");
@@ -58,10 +48,6 @@ int main() {
         return EXIT_FAILURE;
 
     }
-
-
-
-    // �����źż�
 
     if (sigprocmask(SIG_SETMASK, &sigset, NULL) == -1) {
 
@@ -75,10 +61,6 @@ int main() {
 
     printf("Waiting for SIGINT...\n");
 
-
-
-    // �ȴ� SIGINT �ź�
-
     if (sigwait(&sigset, &sig) == -1) {
 
         perror("sigwait() failed");
@@ -87,13 +69,7 @@ int main() {
 
     }
 
-
-
-    // �źŴ����󷵻�
-
     printf("Received SIGINT, exiting.\n");
-
-
 
     return EXIT_SUCCESS;
 

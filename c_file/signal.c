@@ -7,8 +7,6 @@
 #include <stdlib.h>
 
 
-// �źŴ�������
-
 void handle_sigint(int sig) {
 
     printf("Caught signal %d (SIGINT)\n", sig);
@@ -18,8 +16,6 @@ void handle_sigint(int sig) {
 
 
 int main() {
-
-    // ע���źŴ�������
 
     if (signal(SIGINT, handle_sigint) == SIG_ERR) {
 
@@ -33,17 +29,11 @@ int main() {
 
     printf("Press Ctrl+C to catch the SIGINT signal.\n");
 
-
-
-    // ���������ڵ����У�ֱ�����յ��ź�
-
     while (1) {
 
-        pause(); // ��ִͣ�У��ȴ��ź�
+        pause();
 
     }
-
-
 
     return EXIT_SUCCESS;
 

@@ -18,7 +18,7 @@ int main() {
     fgets(buffer, sizeof(buffer), stdin);
 
 
-    c = buffer[strlen(buffer) - 1]; // ���һ���ַ�
+    c = buffer[strlen(buffer) - 1]; 
 
     printf("The last character you entered is: %c\n", c);
 
@@ -36,7 +36,7 @@ int main() {
     fgets(buffer, sizeof(buffer), stdin);
 
 
-    c = buffer[strlen(buffer) - 1]; // ����������һ���ַ�
+    c = buffer[strlen(buffer) - 1]; 
 
     printf("The last character you entered is now: %c\n", c);
 

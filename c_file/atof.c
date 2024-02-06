@@ -1,14 +1,19 @@
-#include <stdio.h>
-#include <stdlib.h> // °üº¬stdlib.hÒÔÊ¹ÓÃatof()º¯Êý
-
-int main() {
-    char str[] = "123.456"; // ¶¨ÒåÒ»¸ö°üº¬Êý×ÖµÄ×Ö·û´®
-    double value;
-
-    // Ê¹ÓÃatof()º¯Êý½«×Ö·û´®×ª»»Îª¸¡µãÊý
-    value = atof(str);
-
-    printf("×ª»»ºóµÄ¸¡µãÊý£º %f\n", value);
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <stdlib.h> 
+
+
+
+int main() {
+
+    char str[] = "123.456"; 
+
+    double value;
+
+    value = atof(str);
+
+    printf("×ªï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ %f\n", value);
+
+    return 0;
+}
+

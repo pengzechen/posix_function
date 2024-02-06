@@ -1,14 +1,16 @@
-#include <stdio.h>
-#include <stdlib.h> // °üº¬stdlib.hÒÔÊ¹ÓÃatol()º¯Êı
-
-int main() {
-    char str[] = "1234"; // ¶¨ÒåÒ»¸ö°üº¬Êı×ÖµÄ×Ö·û´®
-    long value;
-
-    // Ê¹ÓÃatol()º¯Êı½«×Ö·û´®×ª»»Îª³¤ÕûĞÍÊı
-    value = atol(str);
-
-    printf("×ª»»ºóµÄ³¤ÕûÊı£º %ld\n", value);
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <stdlib.h> 
+
+int main() {
+
+    char str[] = "1234"; 
+    long value;
+
+    value = atol(str);
+
+    printf("×ªï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ %ld\n", value);
+
+    return 0;
+}
+

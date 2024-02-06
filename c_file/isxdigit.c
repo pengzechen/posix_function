@@ -1,16 +1,22 @@
-#include <stdio.h>
-#include <ctype.h> // 包含ctype.h以使用isxdigit()函数
-
-int main() {
-    // 测试字符
-    char ch = 'A';
-
-    // 使用isxdigit()检查字符是否是十六进制数字
-    if (isxdigit(ch)) {
-        printf("字符 %c 是十六进制数字。\n", ch);
-    } else {
-        printf("字符 %c 不是十六进制数字。\n", ch);
-    }
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <ctype.h> 
+
+int main() {
+
+    char ch = 'A';
+
+    if (isxdigit(ch)) {
+
+        printf("锟街凤拷 %c 锟斤拷十锟斤拷锟斤拷锟斤拷锟斤拷锟街★拷\n", ch);
+
+    } else {
+
+        printf("锟街凤拷 %c 锟斤拷锟斤拷十锟斤拷锟斤拷锟斤拷锟斤拷锟街★拷\n", ch);
+
+    }
+
+    return 0;
+
+}
+

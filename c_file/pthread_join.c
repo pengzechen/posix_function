@@ -6,15 +6,11 @@
 
 #include <stdlib.h>
 
-// �̺߳�����ִ��һЩ����Ȼ���˳�
 
 void *thread_function(void *arg) {
 
     printf("Thread started. Argument: %ld\n", (long)arg);
 
-
-
-    // ģ��һЩ����
 
     for (int i = 0; i < 5; i++) {
 
@@ -40,10 +36,6 @@ int main() {
 
     long arg = 42;
 
-
-
-    // �����߳�
-
     if (pthread_create(&thread, NULL, thread_function, (void *)arg) != 0) {
 
         perror("pthread_create failed");
@@ -52,9 +44,6 @@ int main() {
 
     }
 
-
-
-    // �ȴ��߳����
 
     if (pthread_join(thread, NULL) != 0) {
 

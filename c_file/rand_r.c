@@ -1,7 +1,6 @@
 #include <stdio.h>
 
-#include <stdlib.h> // ����stdlib.h��ʹ��rand_r()����
-
+#include <stdlib.h> 
 #include <time.h>
 
 int main() {

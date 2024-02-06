@@ -16,10 +16,6 @@ int main() {
 
     int fd;
 
-
-
-    // ���ļ�
-
     fd = open(filename, O_WRONLY | O_CREAT, 0644);
 
     if (fd == -1) {

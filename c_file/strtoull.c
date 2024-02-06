@@ -1,16 +1,21 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-
-int main() {
-    // ¶¨ÒåÒ»¸ö°üº¬ÊýÖµµÄ×Ö·û´®
-    char str[] = "12345";
-
-    // Ê¹ÓÃstrtoull()º¯Êý½«×Ö·û´®×ª»»ÎªÎÞ·ûºÅ³¤ÕûÐÍÊý
-    unsigned long long value = strtoull(str, NULL, 10);
-
-    // ´òÓ¡×ª»»ºóµÄÖµ
-    printf("×ª»»ºóµÄÎÞ·ûºÅ³¤ÕûÐÍÊýÊÇ£º%llu\n", value);
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <stdlib.h>
+
+#include <stdint.h>
+
+
+
+int main() {
+
+    char str[] = "12345";
+
+    unsigned long long value = strtoull(str, NULL, 10);
+
+
+    printf("×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½Å³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç£ï¿½%llu\n", value);
+
+    return 0;
+
+}
+

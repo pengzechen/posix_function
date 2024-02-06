@@ -10,15 +10,10 @@
 
 int main() {
 
-    // ����Դ�ļ���Ŀ���ļ���·��
 
     const char *source_filename = "demo_source_file.txt";
 
     const char *destination_filename = "demo_destination_file.txt";
-
-
-
-    // ����Դ�ļ��ĸ������Ա���������������
 
     char source_path[PATH_MAX];
 
@@ -28,9 +23,6 @@ int main() {
 
     snprintf(destination_path, PATH_MAX, "%s/%s", getcwd(NULL, PATH_MAX), destination_filename);
 
-
-
-    // ����Դ�ļ�������������ڣ�
 
     FILE *source_file = fopen(source_path, "w");
 
@@ -48,10 +40,6 @@ int main() {
 
     fclose(source_file);
 
-
-
-    // �������ļ�
-
     int result = rename(source_path, destination_path);
 
     if (result == 0) {
@@ -62,15 +50,12 @@ int main() {
 
         perror("rename() failed");
 
-        unlink(source_path); // ɾ��ԭʼ�ļ������������ʧ��
+        unlink(source_path); 
 
         return EXIT_FAILURE;
 
     }
 
-
-
-    // ɾ��ԭʼ�ļ�������������ɹ���
 
     result = unlink(source_path);
 
@@ -81,10 +66,6 @@ int main() {
         return EXIT_FAILURE;
 
     }
-
-
-
-    // ���������˳�
 
     return EXIT_SUCCESS;
 

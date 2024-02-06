@@ -1,7 +1,6 @@
 #include <stdio.h>
 
-#include <time.h> // ����time.h��ʹ��localtime_r()����
-
+#include <time.h> 
 #include <stdlib.h>
 
 int main() {
@@ -21,7 +20,6 @@ int main() {
         return 1;
 
     }
-
 
     local_time = localtime_r(&now, local_time);
 

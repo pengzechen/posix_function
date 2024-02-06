@@ -12,11 +12,7 @@ int main() {
 
     const char *filename = "example.txt";
 
-    mode_t mode = S_IRUSR | S_IWUSR; // �����ļ�Ȩ��Ϊ�û���д
-
-
-
-    // ʹ�� creat() ��������ļ�
+    mode_t mode = S_IRUSR | S_IWUSR; 
 
     int fd = creat(filename, mode);
 
@@ -28,10 +24,6 @@ int main() {
 
     }
 
-
-
-    // д��һ���ı����ļ�
-
     const char *text = "Hello, World!\n";
 
     ssize_t bytes_written = write(fd, text, strlen(text));
@@ -40,15 +32,10 @@ int main() {
 
         perror("write() failed");
 
-        close(fd); // �ر��ļ�
+        close(fd); 
 
         return EXIT_FAILURE;
-
     }
-
-
-
-    // �ر��ļ�
 
     if (close(fd) == -1) {
 
@@ -57,10 +44,6 @@ int main() {
         return EXIT_FAILURE;
 
     }
-
-
-
-    // ���������˳�
 
     return EXIT_SUCCESS;
 

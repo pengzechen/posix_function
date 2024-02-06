@@ -18,7 +18,7 @@ void before_fork(void) {
 
     printf("Before fork: Global pointer is %p\n", global_ptr);
 
-    global_ptr = malloc(100); // �����ڴ�
+    global_ptr = malloc(100);
 
     if (global_ptr) {
 
@@ -38,7 +38,7 @@ void after_fork_parent(void) {
 
     printf("After fork (parent): Global pointer is %p\n", global_ptr);
 
-    free(global_ptr); // �ͷ��ڴ�
+    free(global_ptr); 
 
     global_ptr = NULL;
 
@@ -48,7 +48,7 @@ void after_fork_child(void) {
 
     printf("After fork (child): Global pointer is %p\n", global_ptr);
 
-    free(global_ptr); // �ͷ��ڴ�
+    free(global_ptr); 
 
     global_ptr = NULL;
 
@@ -66,10 +66,9 @@ int main() {
 
     }
 
-
     printf("Calling fork()\n");
 
-    pid_t pid = fork(); // ����fork
+    pid_t pid = fork(); 
 
     if (pid < 0) {
 
@@ -85,7 +84,7 @@ int main() {
 
         printf("Parent process\n");
 
-        wait(NULL); // �ȴ��ӽ��̽���
+        wait(NULL); 
 
     }
 

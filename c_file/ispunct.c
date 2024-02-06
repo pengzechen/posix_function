@@ -1,16 +1,22 @@
-#include <stdio.h>
-#include <ctype.h> // °üº¬ctype.hÒÔÊ¹ÓÃispunct()º¯Êý
-
-int main() {
-    // ²âÊÔ×Ö·û
-    char ch = '.';
-
-    // Ê¹ÓÃispunct()¼ì²é×Ö·ûÊÇ·ñÊÇ±êµã·ûºÅ
-    if (ispunct(ch)) {
-        printf("×Ö·û %c ÊÇ±êµã·ûºÅ¡£\n", ch);
-    } else {
-        printf("×Ö·û %c ²»ÊÇ±êµã·ûºÅ¡£\n", ch);
-    }
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <ctype.h> 
+
+int main() {
+
+    char ch = '.';
+
+    if (ispunct(ch)) {
+
+        printf("ï¿½Ö·ï¿½ %c ï¿½Ç±ï¿½ï¿½ï¿½ï¿½Å¡ï¿½\n", ch);
+
+    } else {
+
+        printf("ï¿½Ö·ï¿½ %c ï¿½ï¿½ï¿½Ç±ï¿½ï¿½ï¿½ï¿½Å¡ï¿½\n", ch);
+
+    }
+
+    return 0;
+
+}
+

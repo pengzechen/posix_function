@@ -31,7 +31,7 @@ int main() {
 
         perror("fileno failed");
 
-        fclose(file); // �ر��ļ���
+        fclose(file);
 
         return 1;
 

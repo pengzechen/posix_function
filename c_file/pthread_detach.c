@@ -7,15 +7,10 @@
 
 #include <stdlib.h>
 
-// �̺߳�����ִ��һЩ����
 
 void *thread_function(void *arg) {
 
     printf("Thread started. Argument: %ld\n", (long)arg);
-
-
-
-    // ģ��һЩ����
 
     for (int i = 0; i < 5; i++) {
 
@@ -24,8 +19,6 @@ void *thread_function(void *arg) {
         sleep(1);
 
     }
-
-
 
     printf("Thread finished working.\n");
 
@@ -41,10 +34,6 @@ int main() {
 
     long arg = 42;
 
-
-
-    // ����һ�������߳�
-
     if (pthread_create(&thread, NULL, thread_function, (void *)arg) != 0) {
 
         perror("pthread_create failed");
@@ -53,17 +42,9 @@ int main() {
 
     }
 
-
-
-    // detach the thread
-
     pthread_detach(thread);
 
-
-
     printf("Main thread is exiting immediately. The detached thread will continue to run.\n");
-
-
 
     return 0;
 

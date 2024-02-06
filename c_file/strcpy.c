@@ -6,25 +6,13 @@
 
 int main() {
 
-    // ���������ַ�������
-
     char source[] = "Hello, World!";
 
-    char destination[20]; // ȷ��destination�㹻���Դ洢source�ַ���
-
-
-
-    // ʹ��strcpy()������source�ַ������Ƶ�destination�ַ�����
+    char destination[20]; 
 
     strcpy(destination, source);
 
-
-
-    // ��ӡ���ƺ��destination�ַ���
-
     printf("%s\n", destination);
-
-
 
     return 0;
 

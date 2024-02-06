@@ -18,10 +18,6 @@ int main() {
 
     int dup_fd;
 
-
-
-    // �����ļ�
-
     fd = open("example.txt", O_WRONLY | O_CREAT | O_EXCL, 0644);
 
     if (fd == -1) {
@@ -31,10 +27,6 @@ int main() {
         return EXIT_FAILURE;
 
     }
-
-
-
-    // ����׼����ض������Ǵ������ļ�
 
     dup_fd = dup(STDOUT_FILENO);
 
@@ -48,35 +40,16 @@ int main() {
 
     }
 
-
-
-    // ȷ����׼�������ָ���ն�
-
     close(STDOUT_FILENO);
-
-
-
-    // ���ı�д���ض������ļ�������
 
     write(dup_fd, text, strlen(text));
 
-
-
-    // �ָ���׼������ն�
 
     dup2(dup_fd, STDOUT_FILENO);
 
     close(dup_fd);
 
-
-
-    // �ر�ԭʼ�ļ�������
-
     close(fd);
-
-
-
-    // ���������˳�
 
     return EXIT_SUCCESS;
 

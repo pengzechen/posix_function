@@ -1,16 +1,20 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-
-int main() {
-    // ¶¨ÒåÒ»¸ö°üº¬ÊýÖµµÄ×Ö·û´®
-    char str[] = "12345.6789";
-
-    // Ê¹ÓÃstrtold()º¯Êý½«×Ö·û´®×ª»»Îª³¤Ë«¾«¶È¸¡µãÊý
-    long double value = strtold(str, NULL);
-
-    // ´òÓ¡×ª»»ºóµÄÖµ
-    printf("×ª»»ºóµÄ³¤Ë«¾«¶È¸¡µãÊýÊÇ£º%Lf\n", value);
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <stdlib.h>
+
+#include <stdint.h>
+
+
+
+int main() {
+
+    char str[] = "12345.6789";
+
+    long double value = strtold(str, NULL);
+
+    printf("×ªï¿½ï¿½ï¿½ï¿½Ä³ï¿½Ë«ï¿½ï¿½ï¿½È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç£ï¿½%Lf\n", value);
+
+    return 0;
+
+}
+

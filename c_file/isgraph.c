@@ -1,16 +1,21 @@
-#include <stdio.h>
-#include <ctype.h> // °üº¬ctype.hÒÔÊ¹ÓÃisgraph()º¯Êý
-
-int main() {
-    // ²âÊÔ×Ö·û
-    char ch = 'A';
-
-    // Ê¹ÓÃisgraph()¼ì²é×Ö·ûÊÇ·ñÊÇÍ¼ÐÎ×Ö·û
-    if (isgraph(ch)) {
-        printf("×Ö·û %c ÊÇÍ¼ÐÎ×Ö·û¡£\n", ch);
-    } else {
-        printf("×Ö·û %c ²»ÊÇÍ¼ÐÎ×Ö·û¡£\n", ch);
-    }
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <ctype.h> 
+
+int main() {
+
+    char ch = 'A';
+
+    if (isgraph(ch)) {
+
+        printf("ï¿½Ö·ï¿½ %c ï¿½ï¿½Í¼ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½\n", ch);
+
+    } else {
+
+        printf("ï¿½Ö·ï¿½ %c ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½\n", ch);
+
+    }
+
+    return 0;
+}
+

@@ -6,8 +6,6 @@
 
 int main() {
 
-    // ��ȡ·����������
-
     long path_max = pathconf(".", _PC_PATH_MAX);
 
     if (path_max == -1) {
@@ -18,15 +16,7 @@ int main() {
 
     }
 
-
-
-    // ��ӡ·����������
-
     printf("The maximum path length is: %ld\n", path_max);
-
-
-
-    // ���������˳�
 
     return EXIT_SUCCESS;
 

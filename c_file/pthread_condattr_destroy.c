@@ -16,9 +16,6 @@ int products[NUM_PRODUCTS];
 int num_products = 0;
 
 
-
-// �����������Խṹ
-
 pthread_condattr_t cond_attr;
 
 pthread_cond_t cond;
@@ -26,24 +23,15 @@ pthread_cond_t cond;
 pthread_mutex_t mutex;
 
 
-
-// �������̺߳���
-
 void *producer(void *arg) {
 
     int i;
 
     for (i = 0; i < NUM_PRODUCTS; i++) {
 
-        // ������Ʒ
-
         products[i] = i;
 
         num_products++;
-
-
-
-        // ֪ͨ�������߳�������Ʒ
 
         pthread_mutex_lock(&mutex);
 
@@ -51,11 +39,9 @@ void *producer(void *arg) {
 
         pthread_mutex_unlock(&mutex);
 
-
-
         printf("Produced: %d\n", products[i]);
 
-        sleep(rand() % 3); // �������һ��ʱ��
+        sleep(rand() % 3); 
 
     }
 
@@ -63,17 +49,12 @@ void *producer(void *arg) {
 
 }
 
-
-
-// �������̺߳���
-
 void *consumer(void *arg) {
 
     int i;
 
     for (i = 0; i < NUM_PRODUCTS; i++) {
 
-        // �ȴ���Ʒ
 
         pthread_mutex_lock(&mutex);
 
@@ -84,10 +65,6 @@ void *consumer(void *arg) {
         }
 
         pthread_mutex_unlock(&mutex);
-
-
-
-        // ������Ʒ
 
         printf("Consumed: %d\n", products[i]);
 
@@ -105,10 +82,6 @@ int main() {
 
     pthread_t producer_thread, consumer_thread;
 
-
-
-    // ��ʼ��������������
-
     if (pthread_condattr_init(&cond_attr) != 0) {
 
         perror("pthread_condattr_init failed");
@@ -116,10 +89,6 @@ int main() {
         return 1;
 
     }
-
-
-
-    // ��ʼ��������
 
     if (pthread_mutex_init(&mutex, NULL) != 0) {
 
@@ -129,10 +98,6 @@ int main() {
 
     }
 
-
-
-    // ��ʼ����������
-
     if (pthread_cond_init(&cond, &cond_attr) != 0) {
 
         perror("pthread_cond_init failed");
@@ -140,10 +105,6 @@ int main() {
         return 1;
 
     }
-
-
-
-    // �����������߳�
 
     if (pthread_create(&producer_thread, NULL, producer, NULL) != 0) {
 
@@ -154,9 +115,6 @@ int main() {
     }
 
 
-
-    // �����������߳�
-
     if (pthread_create(&consumer_thread, NULL, consumer, NULL) != 0) {
 
         perror("pthread_create failed for consumer");
@@ -165,33 +123,15 @@ int main() {
 
     }
 
-
-
-    // �ȴ��߳̽���
-
     pthread_join(producer_thread, NULL);
 
     pthread_join(consumer_thread, NULL);
 
-
-
-    // ���ٻ�����
-
     pthread_mutex_destroy(&mutex);
-
-
-
-    // ������������
 
     pthread_cond_destroy(&cond);
 
-
-
-    // ���������������Խṹ
-
     pthread_condattr_destroy(&cond_attr);
-
-
 
     printf("Main thread completed successfully.\n");
 

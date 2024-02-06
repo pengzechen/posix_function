@@ -25,11 +25,9 @@ int main() {
 
     pthread_attr_t attr;
 
-    void *stackaddr = malloc(1024 * 1024); // ����1MB��ջ�ռ�
+    void *stackaddr = malloc(1024 * 1024); 
 
     size_t stacksize = 1024 * 1024;
-
-
 
     if (!stackaddr) {
 

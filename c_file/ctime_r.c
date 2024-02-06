@@ -1,7 +1,6 @@
 #include <stdio.h>
 
-#include <time.h> // ����time.h��ʹ��ctime_r()����
-
+#include <time.h>
 
 int main() {
 

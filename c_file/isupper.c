@@ -1,16 +1,22 @@
-#include <stdio.h>
-#include <ctype.h> // °üº¬ctype.hÒÔÊ¹ÓÃisupper()º¯Êı
-
-int main() {
-    // ²âÊÔ×Ö·û
-    char ch = 'A';
-
-    // Ê¹ÓÃisupper()¼ì²é×Ö·ûÊÇ·ñÊÇÓ¢ÎÄ´óĞ´×ÖÄ¸
-    if (isupper(ch)) {
-        printf("×Ö·û %c ÊÇÓ¢ÎÄ´óĞ´×ÖÄ¸¡£\n", ch);
-    } else {
-        printf("×Ö·û %c ²»ÊÇÓ¢ÎÄ´óĞ´×ÖÄ¸¡£\n", ch);
-    }
-
-    return 0;
-}
+#include <stdio.h>
+
+#include <ctype.h> 
+
+int main() {
+
+    char ch = 'A';
+
+    if (isupper(ch)) {
+
+        printf("ï¿½Ö·ï¿½ %c ï¿½ï¿½Ó¢ï¿½Ä´ï¿½Ğ´ï¿½ï¿½Ä¸ï¿½ï¿½\n", ch);
+
+    } else {
+
+        printf("ï¿½Ö·ï¿½ %c ï¿½ï¿½ï¿½ï¿½Ó¢ï¿½Ä´ï¿½Ğ´ï¿½ï¿½Ä¸ï¿½ï¿½\n", ch);
+
+    }
+
+    return 0;
+
+}
+

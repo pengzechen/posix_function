@@ -18,10 +18,6 @@ int main() {
 
     int sigcount = 0;
 
-
-
-    // ����źż�
-
     if (sigemptyset(&sigset) == -1) {
 
         perror("sigemptyset() failed");
@@ -30,17 +26,9 @@ int main() {
 
     }
 
-
-
-    // ���ó�ʱʱ�䣬����ȴ��ź�1��
-
     timeout.tv_sec = 1;
 
     timeout.tv_nsec = 0;
-
-
-
-    // �����źŴ�����ֱ����ʱ���źŵ���
 
     if (sigpending(&sigset) == -1) {
 
@@ -49,10 +37,6 @@ int main() {
         return EXIT_FAILURE;
 
     }
-
-
-
-    // ����Ƿ����źŵȴ�����
 
     if (sigismember(&sigset, SIGINT)) {
 
@@ -71,10 +55,6 @@ int main() {
         printf("SIGTERM is pending.\n");
 
     }
-
-
-
-    // ��ӡ�ȴ����ź�����
 
     printf("Total signals pending: %d\n", sigcount);
 

@@ -11,9 +11,6 @@
 
 
 int main() {
-
-    // ��һ���ļ�
-
     int fd = open("example.txt", O_RDONLY);
 
     if (fd == -1) {
@@ -30,8 +27,7 @@ int main() {
 
         perror("fstat() failed");
 
-        close(fd); // �ر��ļ�
-
+        close(fd); 
         return EXIT_FAILURE;
 
     }
